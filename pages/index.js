@@ -1,13 +1,18 @@
 import React from 'react';
+import Carousel from "nuka-carousel";
 import { Link } from 'react-router';
 import { prefixLink } from 'gatsby-helpers';
 import Helmet from 'react-helmet';
 import { config } from 'config';
+
 import capstanBacksplash from "../assets/images/Capstan-8x8-backsplash.jpg";
 import percevalFloor from "../assets/images/Perceval-8x8-floor.jpg";
 import seresGrand from "../assets/images/Seres-2-Grand.jpg";
 import interlacedLeaves from "../assets/images/Interlaced-Leaves1.jpg";
 import camelot from "../assets/images/Camelot2.jpg";
+import homerCafe from "../assets/images/homer-cafe.jpg";
+import beachStyle from "../assets/images/beach-style-staircase.jpg";
+import prado from "../assets/images/prado.jpg";
 
 export default class Index extends React.Component {
   render () {
@@ -53,8 +58,14 @@ export default class Index extends React.Component {
         </section>
 
         <section className="tiles-main">
-          <img className="tiles-main-img" src={capstanBacksplash} alt="Capstan 8 by 8 Backsplash Pattern" />
-          <img className="tiles-main-img" src={percevalFloor} alt="Perceval 8 by 8 Floor Pattern" />
+          <Carousel className="carousel" slidesToShow={3} slidesToScroll={1} wrapAround={true} cellSpacing={20}>
+            <img className="tiles-main-img" src={beachStyle} alt="Perceval 8 by 8 Floor Pattern" />
+            <img className="tiles-main-img" src={prado} alt="Perceval 8 by 8 Floor Pattern" />
+            <img className="tiles-main-img" src={homerCafe} alt="Perceval 8 by 8 Floor Pattern" />
+            <img className="tiles-main-img" src={beachStyle} alt="Perceval 8 by 8 Floor Pattern" />
+            <img className="tiles-main-img" src={prado} alt="Perceval 8 by 8 Floor Pattern" />
+            <img className="tiles-main-img" src={homerCafe} alt="Perceval 8 by 8 Floor Pattern" />
+          </Carousel>
         </section>
 
       </div>

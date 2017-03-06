@@ -1,4 +1,5 @@
 .header {
+  z-index: 1000;
   padding: 1em;
   width: 100%;
   background-color: white;
@@ -77,10 +78,11 @@
 
 .tiles-main-img {
   display: block;
-  width: 100%;
   float: left;
+  height: auto;
 
   @media (min-width: 32em) {
     width: 50%;
   }
 }
+
