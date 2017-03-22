@@ -1,4 +1,5 @@
 .header {
+  z-index: 1000;
   padding: 1em;
   width: 100%;
   background-color: white;
@@ -59,7 +60,8 @@
 .core-list {
   width: 100%;
   text-align: center;
-  padding: 1em 0;
+  padding: 1em 0 2em 0;
+  font-size: 1.15em;
 
   @media (min-width: 32em) {
     text-align: left;
@@ -67,20 +69,22 @@
 }
 
 .tiles-main {
-  display: block;
   padding: 2em 0;
+  display: none;
 
   @media (min-width: 32em) {
+    display: block;
     padding: 0em;
   }
 }
 
 .tiles-main-img {
   display: block;
-  width: 100%;
   float: left;
+  height: auto;
 
   @media (min-width: 32em) {
     width: 50%;
   }
 }
+
