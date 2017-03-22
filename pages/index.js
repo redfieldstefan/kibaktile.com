@@ -22,7 +22,10 @@ export default class Index extends React.Component {
   render () {
     return (
       <div className="home">
-        <h1 className="header">Kibak Tile</h1>
+        <div className="header">
+          <h1 className="headline">Kibak Tile</h1>
+          <a className="header-contact" href="mailto:sales@kibaktile.com">Contact</a>
+        </div>
 
         <section className="tile-bar">
           <img className="tile-bar-img" src={seresGrand} />
@@ -60,7 +63,9 @@ export default class Index extends React.Component {
             <li>Obsessively chase the perfect color palette</li>
           </ul>
 
-          <a className="btn" href="mailto:sales@kibaktile.com">Contact Us</a>
+          <p>
+            If you are interested in learning more please contact us via email at <a href="mailto:sales@kibaktile.com">sales@studioredfield.com</a>
+          </p>
 
         </section>
 
