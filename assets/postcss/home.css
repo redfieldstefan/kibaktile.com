@@ -88,3 +88,7 @@
   }
 }
 
+.slider-decorator-0 button, .slider-decorator-1 button {
+  background: black !important;
+}
+
