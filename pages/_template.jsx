@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import '../assets/postcss/style';
 
 const title= "Kibak Tile";
-const description = "Kibak Tile Fine Design";
+const description = "Designing, hand painting, and firing ceramic tiles of rare quality and excellence since 1981";
 
 module.exports = React.createClass({
   propTypes () {
