@@ -8,7 +8,7 @@
   color: rgba(0, 0, 0, .75);
 
   @media (min-width: 32em) {
-    padding: 2em;
+    padding: 1em 2em;
   }
 
 }
@@ -17,6 +17,7 @@
   text-align: center;
   text-transform: uppercase;
   letter-spacing: .1em;
+  font-weight: 400;
   font-size: 2rem;
   color: rgba(0, 0, 0, .75);
 
@@ -52,14 +53,14 @@
 
   @media (min-width: 32em) {
     flex-direction: row;
-    padding: 9em 1em 0 1em;
+    padding: 7em 2em 0em 1em;
   }
 }
 
 .tile-bar-img {
   padding: 1em 0em;
   display: block;
-  width: calc(100%/3);
+  width: 25%;
   align-self: center;
 
   @media (min-width: 32em) {
@@ -75,9 +76,20 @@
   };
 }
 
+.home-top-text {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  padding-bottom: 1em;
+  font-weight: 100;
+}
+
 .text-main p {
-  margin-bottom: 1em;
-  max-width: 1000px;
+  margin-bottom: 1.5em;
+  font-size: 1.15em;
+  max-width: 800px;
+  line-height: 1.5;
+  font-weight: 100;
+
 }
 
 .text-main h3 {
@@ -89,6 +101,9 @@
   text-align: center;
   padding: 1em 0 2em 0;
   font-size: 1.15em;
+  line-height: 2;
+  font-weight: 400;
+  text-transform: uppercase;
 
   @media (min-width: 32em) {
     text-align: left;
@@ -116,6 +131,7 @@
 }
 
 .slider-decorator-0 button, .slider-decorator-1 button {
+  font-size: 1em;
   background: black !important;
 }
 

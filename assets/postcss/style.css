@@ -7,7 +7,7 @@
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   list-style: none;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 main {
@@ -17,7 +17,6 @@ main {
 
 
 h1, h2, h3, h4, h5, p, a {
-  font-family: 'Raleway', sans-serif;
   margin-bottom: 0;
 }
 

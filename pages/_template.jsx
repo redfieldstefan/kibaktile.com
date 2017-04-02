@@ -19,6 +19,7 @@ module.exports = React.createClass({
             meta={[
               { name: "description", content: description },
             ]}
+            link={[{href: "https://fonts.googleapis.com/css?family=Work+Sans"}]}
           />
             {this.props.children}
         </main>
