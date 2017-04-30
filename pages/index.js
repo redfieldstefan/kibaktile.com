@@ -5,6 +5,8 @@ import { prefixLink } from 'gatsby-helpers';
 import Helmet from 'react-helmet';
 import { config } from 'config';
 
+import Nav from '../components/nav';
+
 import grid from "../assets/images/grid.jpg";
 import persianStarLine from "../assets/images/persian-star-2-line.jpg";
 import persianStarColor from "../assets/images/persian-star-2-color.jpg";
@@ -25,11 +27,7 @@ export default class Index extends React.Component {
   render () {
     return (
       <div className="home">
-        <div className="header">
-          <h1 className="headline">Kibak Tile</h1>
-          <a className="header-contact" href="mailto:sales@kibaktile.com">Contact</a>
-        </div>
-
+        <Nav />
         <section className="tile-bar">
           <img className="tile-bar-img" src={grid} alt="grid" />
           <img className="tile-bar-img" src={persianStarLine} alt="grid" />

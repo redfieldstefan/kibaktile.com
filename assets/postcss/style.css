@@ -36,6 +36,10 @@ a {
   text-decoration: none;
 }
 
+.content {
+  padding-top: 6em;
+}
+
 .btn {
   display: inline-block;
   width: 100%;
