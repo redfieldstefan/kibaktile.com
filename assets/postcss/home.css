@@ -10,7 +10,6 @@
   @media (min-width: 32em) {
     padding: 1em 2em;
   }
-
 }
 
 .headline {
@@ -79,7 +78,7 @@
 .home-top-text {
   font-size: 1.25em;
   text-transform: uppercase;
-  padding-bottom: 1em;
+  padding-bottom: 4em;
   font-weight: 100;
 }
 
@@ -89,17 +88,60 @@
   max-width: 800px;
   line-height: 1.5;
   font-weight: 100;
-
 }
 
 .text-main h3 {
   margin-bottom: 1em;
 }
 
+.home-bio {
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 3em;
+
+  @media(min-width: 32em) {
+    flex-flow: row;
+  }
+}
+
+.home-bio-img-container {
+  display: block;
+  height: auto;
+  padding-bottom: 2em;
+  width: 100%;
+
+  @media (min-width: 32em) {
+    padding: 0;
+    width: 30%;
+  }
+
+  @media (min-width: 50em) {
+    width: 20%;
+  }
+}
+
+.home-bio-img {
+  width: 100%;
+}
+
+.home-bio-p {
+  width: 100%;
+
+  @media (min-width: 32em) {
+    padding: 0 0 0 2em;
+    width: 70%;
+  }
+
+  @media (min-width: 50em) {
+    padding: 0 3em;
+    width: 75%;
+  }
+}
+
 .core-list {
   width: 100%;
   text-align: center;
-  padding: 1em 0 2em 0;
+  padding: 2em 0 2em 0;
   font-size: 1.15em;
   line-height: 2;
   font-weight: 400;
@@ -108,6 +150,10 @@
   @media (min-width: 32em) {
     text-align: left;
   }
+}
+
+.core-list-li {
+  margin-bottom: 1em;
 }
 
 .tiles-main {
