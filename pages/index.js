@@ -1,9 +1,9 @@
 import React from 'react';
-import Carousel from "nuka-carousel";
+import BasePage from '../components/base-page';
+import Carousel from "../components/carousel";
 import { Link } from 'react-router';
-import { prefixLink } from 'gatsby-helpers';
 import Helmet from 'react-helmet';
-import { config } from 'config';
+import homeCarousel from "../assets/images/carousels/home";
 
 import carli from "../assets/images/carli.jpg";
 import maren from "../assets/images/maren.jpg";
@@ -14,25 +14,10 @@ import persianStarLine from "../assets/images/persian-star-2-line.jpg";
 import persianStarColor from "../assets/images/persian-star-2-color.jpg";
 import persianStarFinished from "../assets/images/persian-star-2-finished.jpg";
 
-import greenBlossomShower from "../assets/images/green-blossom-shower.jpg";
-import greenBlossomBathroom from "../assets/images/green-blossom-bathroom.jpg";
-import whiteBlossomShower from "../assets/images/white-blossom-shower.jpg";
-import kitchenSink from "../assets/images/kitchen-sink.jpg";
-import blackStoveTop from "../assets/images/black-stove-top.jpg";
-import dragonFlySink from "../assets/images/dragon-fly-sink.jpg";
-import homerCafe from "../assets/images/homer-cafe.jpg";
-import beachStyle from "../assets/images/beach-style-staircase.jpg";
-import prado from "../assets/images/prado.jpg";
-import laPecoraBianca from "../assets/images/La-Pecora-Bianca.jpg";
-
 export default class Index extends React.Component {
   render () {
     return (
-      <div className="home">
-        <div className="header">
-          <h1 className="headline">Kibak Tile</h1>
-          <a className="header-contact" href="mailto:sales@kibaktile.com">Contact</a>
-        </div>
+      <BasePage className="home">
 
         <section className="tile-bar">
           <img className="tile-bar-img" src={grid} alt="grid" />
@@ -97,20 +82,10 @@ export default class Index extends React.Component {
         </section>
 
         <section className="tiles-main">
-          <Carousel className="carousel" slidesToShow={3} slidesToScroll={1} wrapAround={true} cellSpacing={20}>
-            <img className="tiles-main-img" src={beachStyle} alt="Beach Style" />
-            <img className="tiles-main-img" src={laPecoraBianca} alt="La Pecora Bianca" />
-            <img className="tiles-main-img" src={prado} alt="Prado" />
-            <img className="tiles-main-img" src={homerCafe} alt="Homer Cafe" />
-            <img className="tiles-main-img" src={greenBlossomShower} alt="Green Blossom Shower" />
-            <img className="tiles-main-img" src={kitchenSink} alt="Kitchen Sink" />
-            <img className="tiles-main-img" src={whiteBlossomShower} alt="White Blossom Shower" />
-            <img className="tiles-main-img" src={dragonFlySink} alt="Dragon Fly Sink" />
-            <img className="tiles-main-img" src={blackStoveTop} alt="Stove Top" />
-          </Carousel>
+          <Carousel slides={homeCarousel} />
         </section>
 
-      </div>
+      </BasePage>
     )
   }
 }

@@ -1,0 +1,54 @@
+.NextPrevPattern {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1em 4em 1em 1em;
+
+  &.previous {
+    padding: 1em 1em 1em 4em;
+
+    .NextPrevPattern-img {
+      img {
+        float: right;
+      }
+    }
+
+    .text-and-arrow-name {
+      padding: 10px 0px 10px 10px;
+    }
+  }
+
+  &:hover {
+    background-color: $color-mint;
+  };
+}
+
+.NextPrevPattern-img {
+  height: 50px;
+  width: 100%;
+  float: left;
+
+  img {
+    height: 100%;
+    background-color: white;
+  }
+}
+
+.NextPrevPattern-arrow {
+  height: 10px;
+  flex-direction: row-reverse;
+}
+
+.text-and-arrow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &.previous {
+    flex-direction: row-reverse;
+  }
+}
+
+.text-and-arrow-name {
+  padding: 10px 10px 10px 0;
+}
