@@ -4,5 +4,5 @@ export default {
   name: "Angelic Simple",
   lineDrawing,
   slides: [lineDrawing],
-  url: "/catalog/angelic/"
+  url: "/catalog/angelic-simple/"
 };

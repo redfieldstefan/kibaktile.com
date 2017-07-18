@@ -1,12 +1,13 @@
 .download-catalog-bar {
   background-color: whiteSmoke;
-  padding: 25px;
+  padding: 2em;
   display: flex;
   justify-content: center;
+  margin-bottom: 1em;
 }
 
 .download-link {
-  color: $color-slate-grey;
+  color: #103a89;
   text-transform: uppercase;
 
   &:hover {

@@ -2,6 +2,16 @@ import React, { Component } from "react";
 import BasePage from "./base-page";
 import { Carousel } from 'react-responsive-carousel';
 import NextPrevPattern from "./next-prev-pattern";
+import catalog from "../data/catalog";
+
+const defaultDescription = `Infuse your space with beautiful pattern and color using decorative
+  ceramic tile. There are many different ways to feature decorative tile in any project. Use
+  decorative tile over a large area to achieve an all-over pattern effect. Or drop-in single
+  decorative tiles into solid colored field tile to give a pop of color to your installation.
+  Border tiles in 3x6 or 4x8 size are also available to pair with the larger decorative tiles. Each
+  tile is hand-painted with ceramic glaze and kiln fired to create a beautiful and durable final
+  product. Suitable for interior wall, countertop and low-traffic floors. Exterior use in
+  non-freezing climates only. Tile dimensions are 6" x 6" and 8" x 8".`;
 
 class PatternPage extends Component {
 
@@ -28,6 +38,11 @@ class PatternPage extends Component {
   }
 
   render() {
+    const patternIndex = catalog.indexOf(this.state.pattern);
+    const lastIndex = catalog.length - 1
+    const prevPattern = patternIndex === 0 ? catalog[lastIndex] : catalog[patternIndex - 1];
+    const nextPattern = patternIndex === lastIndex ? catalog[0] : catalog[patternIndex + 1];
+
     return(
       <BasePage>
         <div className="PatternPage">
@@ -41,8 +56,12 @@ class PatternPage extends Component {
               <h1 className="pattern-title">{this.state.pattern.name}</h1>
             </span>
             {
-              this.state.pattern.description &&
-              <p className="pattern-description">{this.state.pattern.description}</p>
+              <p className="pattern-description">
+                {
+                  this.state.pattern.description ? this.state.pattern.description :
+                  defaultDescription
+                }
+              </p>
             }
           </div>
           <div className="pattern-carousel">
@@ -51,8 +70,8 @@ class PatternPage extends Component {
             }
           </div>
           <div className="next-prev-arrows">
-            <NextPrevPattern direction="previous" pattern={this.state.pattern} />
-            <NextPrevPattern direction="next"  pattern={this.state.pattern} />
+            <NextPrevPattern direction="previous" pattern={prevPattern} />
+            <NextPrevPattern direction="next"  pattern={nextPattern} />
           </div>
         </div>
       </BasePage>
