@@ -4,6 +4,8 @@ import Carousel from "../components/carousel";
 import { Link } from 'react-router';
 import Helmet from 'react-helmet';
 import homeCarousel from "../assets/images/carousels/home";
+import HomeHero from "../components/home-hero";
+import { safeForRepeat } from "../data/catalog";
 
 import carli from "../assets/images/carli.jpg";
 import maren from "../assets/images/maren.jpg";
@@ -14,10 +16,23 @@ import persianStarLine from "../assets/images/persian-star-2-line.jpg";
 import persianStarColor from "../assets/images/persian-star-2-color.jpg";
 import persianStarFinished from "../assets/images/persian-star-2-finished.jpg";
 
+const randomPattern = safeForRepeat[Math.floor(Math.random()*safeForRepeat.length)];
+
 export default class Index extends React.Component {
   render () {
     return (
       <BasePage className="home">
+
+        <HomeHero pattern={randomPattern}/>
+
+        <div className="pattern-cta">
+          <p>
+            You are looking at our <Link className="random-pattern-link" to={randomPattern.url}>
+              {randomPattern.name}
+            </Link> pattern. View more of our <Link to="/catalog/">Catalog</Link> online or
+            download the <a href="./catalog/kibak-tile-catalog.pdf">full PDF</a>
+          </p>
+        </div>
 
         <section className="tile-bar">
           <img className="tile-bar-img" src={grid} alt="grid" />
@@ -27,10 +42,6 @@ export default class Index extends React.Component {
         </section>
 
         <section  className="text-main">
-
-          <h2 className="home-top-text">
-            Designing, hand painting, and firing ceramic tiles of rare quality and excellence since 1981.
-          </h2>
 
           <section className="home-bio">
             <span className="home-bio-img-container">

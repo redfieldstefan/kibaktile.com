@@ -3,12 +3,28 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  padding-top: 8em;
+  padding-top: 4em;
 
-  @media (min-width: 32em) {
+  @media (min-width: $width-tablet) {
     flex-direction: row;
     padding: 3em 2em 0em 1em;
   }
+}
+
+.pattern-cta {
+  display: none;
+
+  @media(min-width: $width-tablet) {
+    display: flex;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: whiteSmoke;
+  }
+}
+
+.random-pattern-link {
+  color: $color-dark-mint;
 }
 
 .tile-bar-img {
@@ -17,7 +33,7 @@
   width: 25%;
   align-self: center;
 
-  @media (min-width: 32em) {
+  @media (min-width: $width-tablet) {
     padding: 0 3em;
   }
 }
@@ -25,7 +41,7 @@
 .text-main {
   padding: 2em 2em 1em 2em;
 
-  @media (min-width: 32em) {
+  @media (min-width: $width-tablet) {
     padding: 3em 4em;
   };
 }
@@ -54,7 +70,7 @@
   flex-flow: column;
   padding-bottom: 3em;
 
-  @media(min-width: 32em) {
+  @media(min-width: $width-tablet) {
     flex-flow: row;
   }
 }
@@ -65,12 +81,12 @@
   padding-bottom: 2em;
   width: 100%;
 
-  @media (min-width: 32em) {
+  @media (min-width: $width-tablet) {
     padding: 0;
     width: 30%;
   }
 
-  @media (min-width: 50em) {
+  @media (min-width: $width-laptop) {
     width: 20%;
   }
 }
@@ -82,12 +98,12 @@
 .home-bio-p {
   width: 100%;
 
-  @media (min-width: 32em) {
+  @media (min-width: $width-tablet) {
     padding: 0 0 0 2em;
     width: 70%;
   }
 
-  @media (min-width: 50em) {
+  @media (min-width: $width-laptop) {
     padding: 0 3em;
     width: 75%;
   }
@@ -102,7 +118,7 @@
   font-weight: 400;
   text-transform: uppercase;
 
-  @media (min-width: 32em) {
+  @media (min-width: $width-tablet) {
     text-align: left;
   }
 }
@@ -115,7 +131,7 @@
   padding: 2em 0;
   display: none;
 
-  @media (min-width: 32em) {
+  @media (min-width: $width-tablet) {
     display: block;
     padding: 0em;
   }
@@ -126,7 +142,7 @@
   float: left;
   height: auto;
 
-  @media (min-width: 32em) {
+  @media (min-width: $width-tablet) {
     width: 50%;
   }
 }
