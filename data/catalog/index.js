@@ -9,6 +9,13 @@ import sashikoStars from "./sashiko-stars";
 import seres2Grande from "./seres-2-grande";
 import wallflower from "./wallflower";
 
+export const safeForRepeat = [
+  gammon,
+  sashikoStars,
+  kabukiDrop,
+  wallflower
+];
+
 export default [
   angelicSimple,
   camelot,

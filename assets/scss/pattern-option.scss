@@ -9,6 +9,7 @@
   &:hover {
     cursor: pointer;
     background-color: $color-mint;
+    text-decoration: none;
   };
 
   @media(min-width: $width-tablet) {

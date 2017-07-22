@@ -1,0 +1,50 @@
+.HomeHero {
+  position: relative;
+  display: none;
+
+  @media(min-width: $width-tablet) {
+    align-items: center;
+    display: flex;
+    padding-top: 6px;
+    justify-content: center;
+  }
+}
+
+.HomeHero-background {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+.HomeHero-tile {
+  width: 10%;
+  flex-grow: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.HomeHero-text {
+  background-color: $color-slate-grey;
+  color: white;
+  display: flex;
+  flex-flow: column;
+  position: absolute;
+  padding: 1em 2em;
+  text-align: center;
+
+  h1 {
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: .1em;
+    font-weight: 400;
+    font-size: 2rem;
+    margin-bottom: .25em;
+  }
+
+  h2 {
+    font-size: 1em;
+    font-weight: normal;
+  }
+}

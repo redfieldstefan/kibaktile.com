@@ -9,6 +9,7 @@
 @import "./carousel.scss";
 @import "./header.scss";
 @import "./home.scss";
+@import "./home-hero.scss";
 @import "./next-prev-pattern";
 @import "./pattern-page.scss";
 @import "./pattern-option.scss";
@@ -45,8 +46,12 @@ img {
 
 a {
   text-decoration: none;
-  color: tomato;
-  text-decoration: none;
+  color: $color-link;
+
+  &:hover {
+    text-decoration: underline;
+  };
+
 }
 
 .btn {
