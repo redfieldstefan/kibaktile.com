@@ -1,0 +1,40 @@
+.PatternOption {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1em;
+  padding: 1em 3em;
+  width: 50%;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $color-mint;
+  };
+
+  @media(min-width: $width-tablet) {
+    flex-direction: row;
+    width: 100%/3;
+  }
+
+  @media(min-width: $width-laptop) {
+    width: 25%;
+  }
+}
+
+.pattern-option-line-drawing {
+  width: 85px;
+  float: left;
+  background-color: white;
+}
+
+.pattern-option-name {
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 1em;
+
+  @media(min-width: $width-tablet) {
+    padding: 0 0 0 1em;
+    text-align: left;
+  }
+}
