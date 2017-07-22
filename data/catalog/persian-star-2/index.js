@@ -7,9 +7,12 @@ import persianStar2SageBronzePink from "./Persian-Star2-sage-bronze-pink-config.
 export default {
   name: "Persian Star 2",
   lineDrawing,
+  description:`Moroccan style at its very best. Go super
+    subtle with this enduring classic tile design or ramp up the
+    drama using our specialty glazes for major impact.`,
   slides: [
-    persian24pc,
     lineDrawing,
+    persian24pc,
     persianStar2GRLU,
     persianStar2SageBronzePink,
     persianStar2GreenBlueRed,

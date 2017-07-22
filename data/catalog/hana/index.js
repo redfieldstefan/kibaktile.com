@@ -1,5 +1,5 @@
 import lineDrawing from "./Hana.png";
-import hana4pc from "./Hana-4pc-linedrawing.png";
+import fourPiece from "./Hana-4pc-linedrawing.png";
 import hanaBlueWhiteline from "./Hana-blue-whiteline-config.jpg";
 import hanaCPConfig from "./Hana-CP-config.jpg";
 import hanaEAGRConfig from "./Hana-EA-GR-config.jpg";
@@ -9,10 +9,14 @@ import hanaSpeckledWhite from "./Hana-speckled-white-config.jpg";
 
 export default {
   name: "Hana",
+  description: `Brand new to the Kibak line Hana can add pretty and
+    texture to any installation without going girlie on you. Ideal
+    for a bit of Asian infusion, Hana also takes the edge off
+    industrial, or use it for a softer version of modern.`,
   lineDrawing,
   slides: [
-    hana4pc,
     lineDrawing,
+    fourPiece,
     hanaBlueWhiteline,
     hanaCPConfig,
     hanaEAGRConfig,

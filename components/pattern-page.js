@@ -55,14 +55,22 @@ class PatternPage extends Component {
             <span className="pattern-title-container">
               <h1 className="pattern-title">{this.state.pattern.name}</h1>
             </span>
-            {
-              <p className="pattern-description">
+
+            <span className="pattern-description">
+              <p>
                 {
                   this.state.pattern.description ? this.state.pattern.description :
                   defaultDescription
                 }
               </p>
-            }
+
+              <p>
+                Suitable for interior wall, countertop and low-traffic floors. Exterior use in
+                non-freezing climates only. Tile dimensions are 6" x 6" and 8" x 8".
+              </p>
+            </span>
+
+
           </div>
           <div className="pattern-carousel">
             {

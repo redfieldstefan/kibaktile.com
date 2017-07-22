@@ -9,6 +9,7 @@
 .pattern-text {
   display: flex;
   flex-direction: column;
+  line-height: 1.5;
   padding: 2em;
 
   @media(min-width: 640px) {
@@ -17,6 +18,11 @@
 
   @media(min-width: 940px) {
     flex-direction: row;
+  }
+
+  p {
+    margin-bottom: 1em;
+    padding-right: 2em;
   }
 }
 

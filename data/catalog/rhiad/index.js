@@ -7,9 +7,13 @@ import rhiadMWWhite from "./Rhiad-MW-white-config.jpg";
 export default {
   name: "Rhiad",
   lineDrawing,
+  description: `Another Kibak classic from our Andalusian series
+    shown through Ann Sacks, Rhiad never disappoints. For
+    impact and longevity Rhiad has to be a contender for every
+    interior storyboard.`,
   slides: [
-    rhiad4pc,
     lineDrawing,
+    rhiad4pc,
     rhiadGreyWhite,
     rhiadBlueWhite,
     rhiadMWWhite,
