@@ -20,8 +20,8 @@ const Carousel = ({slides, thumbs, slidesToScroll, slidesToShow, ...restOfProps}
       dots={true}
     >
       {
-        slides.map((img) => (
-          <img className="tiles-main-img" src={img} />)
+        slides.map((img, i) => (
+          <img key={i} className="tiles-main-img" src={img} />)
         )
       }
     </Slider>

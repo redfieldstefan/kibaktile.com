@@ -9,14 +9,19 @@ const generateTiles = (pattern) => {
 };
 
 export default class HomeHero extends Component {
+
+  shouldComponentUpdate() {
+    return false;
+  }
+
   render() {
     return (
       <div className="HomeHero">
         <div className="HomeHero-background">
           {
-            generateTiles(this.props.pattern).map((tile) => {
+            generateTiles(this.props.pattern).map((tile, i) => {
               return (
-                <span className="HomeHero-tile">
+                <span key={i} className="HomeHero-tile">
                   <img src={tile} />
                 </span>
               )
