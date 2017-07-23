@@ -16,19 +16,30 @@ import persianStarLine from "../assets/images/persian-star-2-line.jpg";
 import persianStarColor from "../assets/images/persian-star-2-color.jpg";
 import persianStarFinished from "../assets/images/persian-star-2-finished.jpg";
 
-const randomPattern = safeForRepeat[Math.floor(Math.random()*safeForRepeat.length)];
-
 export default class Index extends React.Component {
+
+  constructor(props) {
+    super(props);
+    const randomPattern = safeForRepeat[Math.floor(Math.random()*safeForRepeat.length)];
+
+    this.state = {
+      pattern: randomPattern
+    }
+  }
+
   render () {
+
+    const {pattern} = this.state;
+
     return (
       <BasePage className="home">
 
-        <HomeHero pattern={randomPattern}/>
+        <HomeHero pattern={pattern}/>
 
         <div className="pattern-cta">
           <p>
-            You are looking at our <Link className="random-pattern-link" to={randomPattern.url}>
-              {randomPattern.name}
+            You are looking at our <Link className="random-pattern-link" to={pattern.url}>
+              {pattern.name}
             </Link> pattern. View more of our <Link to="/catalog/">Catalog</Link> online or
             download the <a href="./catalog/kibak-tile-catalog.pdf">full PDF</a>
           </p>
