@@ -20,11 +20,18 @@ export default class Index extends React.Component {
 
   constructor(props) {
     super(props);
-    const randomPattern = safeForRepeat[Math.floor(Math.random()*safeForRepeat.length)];
 
     this.state = {
-      pattern: randomPattern
+      pattern: null
     }
+  }
+
+  componentWillMount() {
+    const pattern = safeForRepeat[Math.floor(Math.random()*safeForRepeat.length)];
+
+    this.setState({
+      pattern
+    });
   }
 
   render () {
