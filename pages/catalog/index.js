@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import BasePage from "../../components/base-page";
 import PatternOption from "../../components/pattern-option";
 import downloadIcon from "../../assets/images/icons/download.png";
-
 import catalog from "../../data/catalog";
+
+const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Tile+catalog.pdf";
 
 class Catalog extends Component {
 
@@ -30,7 +31,7 @@ class Catalog extends Component {
         <div className="download-catalog-bar">
           <p>
             Browse our patterns online or
-            <a className="download-link" href="./kibak-tile-catalog.pdf">
+            <a className="download-link" href={pdfUrl}>
               Download Full Catalog PDF
             </a>
           </p>

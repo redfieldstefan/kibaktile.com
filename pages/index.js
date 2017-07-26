@@ -16,6 +16,8 @@ import persianStarLine from "../assets/images/persian-star-2-line.jpg";
 import persianStarColor from "../assets/images/persian-star-2-color.jpg";
 import persianStarFinished from "../assets/images/persian-star-2-finished.jpg";
 
+const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Tile+catalog.pdf";
+
 export default class Index extends React.Component {
 
   constructor(props) {
@@ -48,7 +50,7 @@ export default class Index extends React.Component {
             You are looking at our <Link className="random-pattern-link" to={pattern.url}>
               {pattern.name}
             </Link> pattern. View more of our <Link to="/catalog/">Catalog</Link> online or
-            download the <a href="./catalog/kibak-tile-catalog.pdf">full PDF</a>
+            download the <a href={pdfUrl}>full PDF</a>
           </p>
         </div>
 
