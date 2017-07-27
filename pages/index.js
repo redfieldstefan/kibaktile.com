@@ -1,11 +1,9 @@
 import React from 'react';
 import BasePage from '../components/base-page';
 import Carousel from "../components/carousel";
-import { Link } from 'react-router';
 import Helmet from 'react-helmet';
 import homeCarousel from "../assets/images/carousels/home";
 import HomeHero from "../components/home-hero";
-import { safeForRepeat } from "../data/catalog";
 
 import carli from "../assets/images/carli.jpg";
 import maren from "../assets/images/maren.jpg";
@@ -19,40 +17,11 @@ import persianStarFinished from "../assets/images/persian-star-2-finished.jpg";
 const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Tile+catalog.pdf";
 
 export default class Index extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      pattern: null
-    }
-  }
-
-  componentWillMount() {
-    const pattern = safeForRepeat[Math.floor(Math.random()*safeForRepeat.length)];
-
-    this.setState({
-      pattern
-    });
-  }
-
   render () {
-
-    const {pattern} = this.state;
-
     return (
       <BasePage className="home">
 
-        <HomeHero pattern={pattern}/>
-
-        <div className="pattern-cta">
-          <p>
-            You are looking at our <Link className="random-pattern-link" to={pattern.url}>
-              {pattern.name}
-            </Link> pattern. View more of our <Link to="/catalog/">Catalog</Link> online or
-            download the <a href={pdfUrl}>full PDF</a>
-          </p>
-        </div>
+        <HomeHero />
 
         <section className="tile-bar">
           <img className="tile-bar-img" src={grid} alt="grid" />
