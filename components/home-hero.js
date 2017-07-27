@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from 'react-router';
-import { safeForRepeat } from "../data/catalog";
+import catalog from "../data/catalog";
 
 const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Tile+catalog.pdf";
 
@@ -16,7 +16,7 @@ export default class HomeHero extends Component {
 
   constructor(props) {
     super(props);
-    const pattern = safeForRepeat[Math.floor(Math.random()*safeForRepeat.length)];
+    const pattern = catalog[Math.floor(Math.random()*catalog.length)];
 
     this.state = {
       pattern
@@ -35,7 +35,7 @@ export default class HomeHero extends Component {
             {
               generateTiles(this.state.pattern).map((tile, i) => {
                 return (
-                  <span key={i} className="HomeHero-tile">
+                  <span key={i} className={`HomeHero-tile ${this.state.pattern.rotationClass}`}>
                     <img src={tile} />
                   </span>
                 )

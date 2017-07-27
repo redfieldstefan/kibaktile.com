@@ -23,13 +23,6 @@ export default class Index extends React.Component {
 
         <HomeHero />
 
-        <section className="tile-bar">
-          <img className="tile-bar-img" src={grid} alt="grid" />
-          <img className="tile-bar-img" src={persianStarLine} alt="grid" />
-          <img className="tile-bar-img" src={persianStarColor} alt="grid" />
-          <img className="tile-bar-img" src={persianStarFinished} alt="grid" />
-        </section>
-
         <section  className="text-main">
 
           <section className="home-bio">

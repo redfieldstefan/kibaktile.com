@@ -18,5 +18,6 @@ export default {
     rhiadBlueWhite,
     rhiadMWWhite,
   ],
-  url: "/catalog/rhiad/"
+  url: "/catalog/rhiad/",
+  rotationClass: "rotate-right"
 };

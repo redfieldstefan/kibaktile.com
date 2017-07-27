@@ -22,5 +22,6 @@ export default {
     neutralShowerInstall,
     neutralTubInstall
   ],
-  url: "/catalog/seres-2-grande/"
+  url: "/catalog/seres-2-grande/",
+  rotationClass: "rotate-standard"
 };

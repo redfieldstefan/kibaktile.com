@@ -17,5 +17,6 @@ export default {
     persianStar2SageBronzePink,
     persianStar2GreenBlueRed,
   ],
-  url: "/catalog/persian-star-2/"
+  url: "/catalog/persian-star-2/",
+  rotationClass: "rotate-standard"
 };

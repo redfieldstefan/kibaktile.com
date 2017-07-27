@@ -24,5 +24,6 @@ export default {
     hanaGS2Config,
     hanaSpeckledWhite
   ],
-  url: "/catalog/hana/"
+  url: "/catalog/hana/",
+  rotationClass: "rotate-mirror"
 };

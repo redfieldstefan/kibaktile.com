@@ -24,5 +24,6 @@ export default {
     GRIHConfig,
     camelotBacksplash
   ],
-  url: "/catalog/camelot/"
+  url: "/catalog/camelot/",
+  rotationClass: "rotate-right"
 };

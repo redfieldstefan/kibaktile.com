@@ -21,5 +21,6 @@ export default {
     yelBlueGreenConfig,
     yellowWhiteConfig
   ],
-  url: "/catalog/angelic-simple/"
+  url: "/catalog/angelic-simple/",
+  rotationClass: "rotate-right"
 };
