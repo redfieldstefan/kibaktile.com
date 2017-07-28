@@ -14,6 +14,8 @@ export default {
     for a bit of Asian infusion, Hana also takes the edge off
     industrial, or use it for a softer version of modern.`,
   lineDrawing,
+  painted: hanaBlueWhiteline,
+  fourPiece,
   slides: [
     lineDrawing,
     fourPiece,
