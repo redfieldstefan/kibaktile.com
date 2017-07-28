@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from 'react-router';
-import catalog from "../data/catalog";
 
 const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Tile+catalog.pdf";
 
@@ -14,15 +13,6 @@ const generateTiles = (pattern) => {
 
 export default class HomeHero extends Component {
 
-  constructor(props) {
-    super(props);
-    const pattern = catalog[Math.floor(Math.random()*catalog.length)];
-
-    this.state = {
-      pattern
-    }
-  }
-
   shouldComponentUpdate() {
     return false;
   }
@@ -33,9 +23,9 @@ export default class HomeHero extends Component {
         <div className="HomeHero">
           <div className="HomeHero-background">
             {
-              generateTiles(this.state.pattern).map((tile, i) => {
+              generateTiles(this.props.pattern).map((tile, i) => {
                 return (
-                  <span key={i} className={`HomeHero-tile ${this.state.pattern.rotationClass}`}>
+                  <span key={i} className={`HomeHero-tile ${this.props.pattern.rotationClass}`}>
                     <img src={tile} />
                   </span>
                 )
@@ -49,8 +39,8 @@ export default class HomeHero extends Component {
         </div>
         <div className="pattern-cta">
           <p>
-            You are looking at our <Link className="random-pattern-link" to={this.state.pattern.url}>
-              {this.state.pattern.name}
+            You are looking at our <Link className="random-pattern-link" to={this.props.pattern.url}>
+              {this.props.pattern.name}
             </Link> pattern. View more of our <Link to="/catalog/">Catalog</Link> online or
             download the <a href={pdfUrl}>full PDF</a>
           </p>

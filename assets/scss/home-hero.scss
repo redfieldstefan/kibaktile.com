@@ -1,12 +1,12 @@
 .HomeHero {
   position: relative;
-  display: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  padding-top: 40px;
 
   @media(min-width: $width-tablet) {
-    align-items: center;
-    display: flex;
     padding-top: 6px;
-    justify-content: center;
   }
 }
 
@@ -17,8 +17,12 @@
 }
 
 .HomeHero-tile {
-  width: 10%;
+  width: 20%;
   flex-grow: 0;
+
+  @media(min-width: $width-tablet) {
+    width: 10%;
+  }
 
   img {
     width: 100%;
@@ -100,4 +104,22 @@
     font-size: 1em;
     font-weight: normal;
   }
+}
+
+.pattern-cta {
+    align-items: center;
+    background-color: whiteSmoke;
+    display: flex;
+    justify-content: center;
+    height: 100px;
+    text-align: center;
+    padding: $padding-content-mobile;
+
+  @media(min-width: $width-tablet) {
+    text-align: left;
+  }
+}
+
+.random-pattern-link {
+  color: $color-dark-mint;
 }
