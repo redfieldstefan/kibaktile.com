@@ -44,7 +44,10 @@ class PatternPage extends Component {
     const nextPattern = patternIndex === lastIndex ? catalog[0] : catalog[patternIndex + 1];
 
     return(
-      <BasePage>
+      <BasePage
+        title={`${this.state.pattern.name} | Kibak Tile`}
+        description={this.state.pattern.description}
+      >
         <div className="PatternPage">
           <div className="pattern-breadcrumb">
             <a href="/catalog/">Patterns</a>
