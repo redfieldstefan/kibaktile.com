@@ -3,7 +3,12 @@
   justify-content: center;
   align-items: center;
   display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   padding-top: 40px;
+  -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
 
   @media(min-width: $width-tablet) {
     padding-top: 6px;
@@ -34,58 +39,86 @@
     };
 
     &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
-      transform: rotate(270deg);
+      /*transform: rotate(90deg);*/
     }
 
     &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
-      transform: rotate(180deg);
+      /*transform: rotate(270deg);*/
+    }
+
+    @media(min-width: $width-tablet) {
+      &:nth-child(2n) {
+        transform: rotate(90deg);
+      };
+
+      &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
+        transform: rotate(270deg);
+      }
+
+      &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
+        transform: rotate(180deg);
+      }
     }
   }
 
   &.rotate-right {
+
     &:nth-child(2n) {
-      transform: rotate(-90deg);
+      transform: rotate(90deg);
     };
 
-    &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
+    &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
       transform: rotate(90deg);
     }
 
-    &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
-      transform: rotate(180deg);
+    @media(min-width: $width-tablet) {
+      &:nth-child(2n) {
+        transform: rotate(-90deg);
+      };
+
+      &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
+        transform: rotate(90deg);
+      }
+
+      &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
+        transform: rotate(180deg);
+      }
     }
   }
 
   &.rotate-mirror {
-    &:nth-child(2n) {
-      -moz-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      filter: FlipH;
-      -ms-filter: "FlipH";
-    };
+    @media(min-width: $width-tablet) {
+      &:nth-child(2n) {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+      };
 
-    &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
-      -moz-transform: scaleX(-1);
-      -o-transform: scaleX(-1);
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      filter: FlipH;
-      -ms-filter: "FlipH";
-    }
+      &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+      }
 
-    &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
-      transform: rotate(180deg);
+      &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
+        transform: rotate(180deg);
+      }
     }
   }
-
 }
 
 .HomeHero-text {
   background-color: $color-slate-grey;
   color: white;
   display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
   flex-flow: column;
   position: absolute;
   padding: 1em 2em;
@@ -107,13 +140,13 @@
 }
 
 .pattern-cta {
-    align-items: center;
-    background-color: whiteSmoke;
-    display: flex;
-    justify-content: center;
-    height: 100px;
-    text-align: center;
-    padding: $padding-content-mobile;
+  align-items: center;
+  background-color: whiteSmoke;
+  display: flex;
+  justify-content: center;
+  height: 100px;
+  text-align: center;
+  padding: $padding-content-mobile;
 
   @media(min-width: $width-tablet) {
     text-align: left;

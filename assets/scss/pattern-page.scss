@@ -108,9 +108,19 @@
 
   .previous {
     float: left;
+    width: 100%;
+
+    @media(min-width: $width-tablet) {
+      width: auto;
+    }
   }
 
   .next {
     float: right;
+    width: 100%;
+
+    @media(min-width: $width-tablet) {
+      width: auto;
+    }
   }
 }
