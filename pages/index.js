@@ -59,9 +59,11 @@ export default class Index extends React.PureComponent {
               })
             }
           </div>
-          <div className="HomeHero-text">
-            <h1>Kibak Tile</h1>
-            <h2>Design, make, bake, repeat. Hand-painted ceramic tile made in Oregon since 1981.</h2>
+          <div className="HomeHero-text-container">
+            <div className="HomeHero-text">
+              <h1>Kibak Tile</h1>
+              <h2>Design, make, bake, repeat. Hand-painted ceramic tile made in Oregon since 1981.</h2>
+            </div>
           </div>
         </div>
         <div className="pattern-cta">
