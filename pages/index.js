@@ -5,18 +5,17 @@ import Helmet from 'react-helmet';
 import homeCarousel from "../assets/images/carousels/home";
 import PatternBar from "../components/pattern-bar";
 import catalog from "../data/catalog";
-import hana from "../data/catalog/hana";
 import { Link } from 'react-router';
 
+//PATTERNS
+import angelicSimple from "../data/catalog/angelic-simple";
+import hana from "../data/catalog/hana";
+import gammon from "../data/catalog/gammon";
+import wallflower from "../data/catalog/wallflower";
 
 import carli from "../assets/images/carli.jpg";
 import maren from "../assets/images/maren.jpg";
 import susanne from "../assets/images/susanne.jpg";
-
-import grid from "../assets/images/grid.jpg";
-import persianStarLine from "../assets/images/persian-star-2-line.jpg";
-import persianStarColor from "../assets/images/persian-star-2-color.jpg";
-import persianStarFinished from "../assets/images/persian-star-2-finished.jpg";
 
 const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Tile+catalog.pdf";
 
@@ -96,7 +95,8 @@ export default class Index extends React.PureComponent {
             </p>
           </section>
 
-          <PatternBar pattern={hana} />
+          <PatternBar pattern={hana} alignment="left" backgroundColor="dark-blue" />
+          <PatternBar pattern={wallflower} alignment="right" backgroundColor="black" />
 
           <section className="home-bios">
             <section className="home-bio">
@@ -136,18 +136,10 @@ export default class Index extends React.PureComponent {
             </section>
           </section>
 
-          <ul className="core-list">
-            <li className="core-list-li">We are passionate about listening</li>
-            <li className="core-list-li">We bring over forty years of knowledge and competence to each project</li>
-            <li className="core-list-li">Collaboration and teamwork drive our creative innovation</li>
-            <li className="core-list-li">Obsessively chase the perfect color palette</li>
-          </ul>
-
-          <p className="contact-us">
-            If you are interested in learning more please contact us via email at <a href="mailto:sales@kibaktile.com">sales@studioredfield.com</a>
-          </p>
-
         </section>
+
+        <PatternBar pattern={gammon} alignment="right" backgroundColor="dark-brown" />
+        <PatternBar pattern={angelicSimple} alignment="left" backgroundColor="light-gray" />
 
         <section className="tiles-main">
           <Carousel slides={homeCarousel} />

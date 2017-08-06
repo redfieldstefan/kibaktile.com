@@ -13,6 +13,8 @@ export default {
     Nordic clean. Add color or keep it effortless, the pretty factor
     is there without being saccharine.`,
   lineDrawing,
+  painted: whiteConfig,
+  fourPiece,
   slides: [
     lineDrawing,
     fourPiece,
