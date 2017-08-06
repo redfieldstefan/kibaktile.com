@@ -13,6 +13,8 @@ export default {
     room or powder room, or infuse a little urbane elegance with
     our more organic, earthy, specialty glazes.`,
   lineDrawing,
+  painted: DEKQConfig,
+  fourPiece,
   slides: [
     lineDrawing,
     fourPiece,

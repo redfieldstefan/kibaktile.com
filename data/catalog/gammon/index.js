@@ -1,5 +1,5 @@
 import lineDrawing from "./Gammon.png";
-import gammon4pc from "./Gammon-4pc-linedrawing.png";
+import fourPiece from "./Gammon-4pc-linedrawing.png";
 import whiteConfig from "./Gammon-white-config.jpg";
 import blackConfig from "./Gammon-black-sima-config.jpg";
 
@@ -12,9 +12,11 @@ export default {
     more dramatic statement depending on dry-line and color
     choice.`,
   lineDrawing,
+  painted: blackConfig,
+  fourPiece,
   slides: [
     lineDrawing,
-    gammon4pc,
+    fourPiece,
     whiteConfig,
     blackConfig
   ],
