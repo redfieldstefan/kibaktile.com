@@ -30,8 +30,8 @@ class Catalog extends Component {
       <BasePage className="Catalog" title="Kibak Tile | Catalog">
         <div className="download-catalog-bar">
           <p>
-            Browse our patterns online or
-            <a className="download-link" href={pdfUrl}>
+            Browse a selection of our patterns online or
+            <a className="download-link color-dark-mint" href={pdfUrl}>
               Download Full Catalog PDF
             </a>
           </p>
