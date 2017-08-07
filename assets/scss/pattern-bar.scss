@@ -1,13 +1,17 @@
 .PatternBar {
   display: flex;
-  overflow: hidden;
+  flex-wrap: wrap;
 
   &.left {
-    padding-left: 2em;
+    @media(min-width: $width-tablet) {
+      padding-left: 2em;
+    }
   }
 
   &.right {
-    padding-right: 2em;
+    @media(min-width: $width-tablet) {
+      padding-right: 2em;
+    }
   }
 
   &.background-dark-blue {
@@ -29,8 +33,12 @@
 
 .pattern-bar-tile {
   flex-grow: 0;
-  width: 25%;
+  width: 50%;
   justify-content: center;
+
+  @media(min-width: $width-tablet) {
+    width: 25%;
+  }
 
   img {
     width: 100%;
@@ -67,12 +75,11 @@
 
     .pattern-bar-headline {
       display: block;
-      width: 100px;
       padding-bottom: 5px;
+      width: 100%;
 
       @media(min-width: $width-tablet) {
         font-size: 1.5em;
-        width: 100%;
       }
 
       @media(min-width: $width-laptop) {
