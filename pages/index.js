@@ -21,8 +21,8 @@ const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Ti
 
 const generateTiles = (pattern) => {
   const tilesForReturn = [];
-  for(var i = 0; i <= 29; i++) {
-    tilesForReturn.push(pattern.lineDrawing);
+  for(var i = 0; i <= 23; i++) {
+    tilesForReturn.push(pattern.fourPiece);
   }
   return tilesForReturn;
 };

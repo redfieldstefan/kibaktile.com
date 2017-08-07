@@ -1,5 +1,5 @@
 import lineDrawing from "./Timeless-Camelot-6x6-8x8.png";
-import camelot4pc from "./Camelot-4pc-linedrawing.png";
+import fourPiece from "./Camelot-4pc-linedrawing.png";
 import timelessCamelot from "./Camelot-warm.jpg";
 import cWFourConfig from "./Camelot-cw4-config.jpg";
 import GRIHConfig from "./Camelot-GR-IH-config.jpg";
@@ -16,9 +16,11 @@ export default {
     ways, OR infuse a bit of your own color story to create a truly
     personal look.`,
   lineDrawing,
+  painted: timelessCamelot,
+  fourPiece,
   slides: [
     lineDrawing,
-    camelot4pc,
+    fourPiece,
     timelessCamelot,
     cWFourConfig,
     GRIHConfig,

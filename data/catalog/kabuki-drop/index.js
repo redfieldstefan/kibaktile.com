@@ -6,6 +6,8 @@ import yellowGreenConfig from "./Kabuki-Drop-yellow-green-config.jpg";
 export default {
   name: "Kabuki Drop",
   lineDrawing,
+  painted: yellowBlueConfig,
+  fourPiece,
   description: `Stunning Kabuki Drop is a great way to add a
     suggestion of color to any interior without overwhelming
     impact. This pattern reads like a smaller mosaic pattern and

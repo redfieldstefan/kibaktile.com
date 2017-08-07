@@ -13,6 +13,8 @@ export default {
     understated tones or dial up the color Seres 2 Grand will add
     a major wow factor to floor, wall, or ceiling.`,
   lineDrawing,
+  painted: blueWhiteConfig,
+  fourPiece,
   slides: [
     lineDrawing,
     fourPiece,
