@@ -35,6 +35,7 @@
   justify-content: center;
   -webkit-justify-content: center;
   top: 0;
+  padding-top: inherit;
   height: 100%;
   width: 100%;
 }
@@ -72,9 +73,13 @@
   height: 100px;
   text-align: center;
   padding: $padding-content-mobile;
+  font-size: 1em;
 
   @media(min-width: $width-tablet) {
+    line-height: 1.5;
+    padding: 0 4em;
     text-align: left;
+    font-weight: 300;
   }
 }
 

@@ -1,35 +1,15 @@
-.tile-bar {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 100%;
-  padding-top: 4em;
-
-  @media (min-width: $width-tablet) {
-    flex-direction: row;
-    padding: 3em 2em 0em 1em;
-  }
-}
-
-.home-top-text {
-  font-size: 1.25em;
-  text-transform: uppercase;
-  padding-bottom: 3em;
-  font-weight: 100;
-}
-
 .mission-statement {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
   font-size: 1em;
-  padding: 4em $padding-content-mobile;
+  padding: 2em $padding-content-mobile;
   text-align: left;
 
   @media(min-width: $width-tablet) {
     font-size: 1.15em;
-    padding: 3em 12em;
+    padding: 3em 3em;
     text-align: justify;
   }
 
@@ -78,11 +58,6 @@
 
   @media (min-width: $width-tablet) {
     padding: 0;
-
-  }
-
-  @media (min-width: $width-laptop) {
-
   }
 }
 
@@ -98,6 +73,8 @@
   width: 100%;
   text-align: left;
   font-size: 1em;
+  font-weight: 300;
+  line-height: 1.5;
 
   @media (min-width: $width-tablet) {
     padding: 0 0 0 2em;
@@ -107,9 +84,7 @@
 
   @media (min-width: $width-laptop) {
     padding: 0 3em 0 5em;
-    line-height: 1.5;
     font-size: 1.15em;
-    font-weight: 300;
     margin-bottom: 1.5em;
     width: 75%;
   }
