@@ -18,91 +18,13 @@
   flex-grow: 0;
 
   @media(min-width: $width-tablet) {
-    width: (100%/8);
+    width: (100%/6);
   }
 
   img {
     width: 100%;
   }
 
-  &.rotate-standard {
-    &:nth-child(2n) {
-      transform: rotate(90deg);
-    };
-
-    &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
-      /*transform: rotate(90deg);*/
-    }
-
-    &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
-      /*transform: rotate(270deg);*/
-    }
-
-    @media(min-width: $width-tablet) {
-      &:nth-child(2n) {
-        transform: rotate(90deg);
-      };
-
-      &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
-        transform: rotate(270deg);
-      }
-
-      &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
-        transform: rotate(180deg);
-      }
-    }
-  }
-
-  &.rotate-right {
-
-    &:nth-child(2n) {
-      transform: rotate(90deg);
-    };
-
-    &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
-      transform: rotate(90deg);
-    }
-
-    @media(min-width: $width-tablet) {
-      &:nth-child(2n) {
-        transform: rotate(-90deg);
-      };
-
-      &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
-        transform: rotate(90deg);
-      }
-
-      &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
-        transform: rotate(180deg);
-      }
-    }
-  }
-
-  &.rotate-mirror {
-    @media(min-width: $width-tablet) {
-      &:nth-child(2n) {
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-      };
-
-      &:nth-child(11), &:nth-child(13), &:nth-child(15), &:nth-child(17), &:nth-child(19) {
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
-      }
-
-      &:nth-child(12), &:nth-child(14), &:nth-child(16), &:nth-child(18), &:nth-child(20) {
-        transform: rotate(180deg);
-      }
-    }
-  }
 }
 
 .HomeHero-text-container {

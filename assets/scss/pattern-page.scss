@@ -35,24 +35,26 @@
 
 .pattern-title {
   color: white;
-  font-weight: 200;
   letter-spacing: .025em;
+  font-weight: 300;
   padding: 1em;
-  text-transform: uppercase;
 
   @media(min-width: 940px) {
     padding: 2em;
+    font-size: 2.5em;
   }
 }
 
 .pattern-description {
-  font-size: 1.1em;
+  font-size: 1.15em;
   padding: 2em 0;
 
   @media(min-width:  940px) {
     padding: 1em 4em;
     text-align: justify;
     max-width: 1000px;
+    line-height: 1.5;
+    font-weight: 300;
   }
 }
 

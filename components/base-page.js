@@ -21,7 +21,7 @@ const BasePage = ({children, className, description, title}) => (
       <h1 className="headline">Kibak Tile</h1>
       </Link>
       <span className="header-links">
-        <a className="header-link" href="mailto:sales@kibaktile.com">Contact</a>
+        <a className="header-link" href="mailto:info@kibaktile.com">Contact</a>
         <a className="header-link" href="/catalog/">Catalog</a>
       </span>
     </div>

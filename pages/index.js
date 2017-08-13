@@ -21,8 +21,8 @@ const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Ti
 
 const generateTiles = (pattern) => {
   const tilesForReturn = [];
-  for(var i = 0; i <= 23; i++) {
-    tilesForReturn.push(pattern.fourPiece);
+  for(var i = 0; i <= 11; i++) {
+    tilesForReturn.push(pattern.painted);
   }
   return tilesForReturn;
 };
@@ -91,7 +91,7 @@ export default class Index extends React.PureComponent {
             </p>
 
             <p className="contact-us">
-              contact us via email at <a href="mailto:sales@kibaktile.com">sales@studioredfield.com</a>
+              contact us via email at <a href="mailto:info@kibaktile.com">info@kibaktile.com</a>
             </p>
           </section>
 
