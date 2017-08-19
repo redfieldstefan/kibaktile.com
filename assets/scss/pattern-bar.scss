@@ -86,5 +86,15 @@
         font-size: 2.5em;
       }
     }
+
+    .pattern-bar-link {
+      color: $color-mint;
+      -webkit-transition: color .25s, -webkit-transform 2s;
+      transition: .5s;
+
+      &:hover {
+        color: #64B1B8;
+      };
+    }
   }
 }

@@ -18,7 +18,7 @@ const patternBarText = (pattern, alignment) => (
         <span className="pattern-bar-headline">
           { pattern.name }
         </span>
-        <Link className="color-dark-mint" to={pattern.url}>View more configurations</Link>
+        <Link className="pattern-bar-link" to={pattern.url}>View more configurations</Link>
       </span>
     </span>
   </span>

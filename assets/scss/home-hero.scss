@@ -84,5 +84,10 @@
 }
 
 .random-pattern-link {
-  color: $color-dark-mint;
+  color: $color-mint;
+  -webkit-transition: color .25s, -webkit-transform 2s;
+
+  &:hover {
+    color: #64B1B8;
+  };
 }

@@ -57,14 +57,13 @@ a {
 }
 
 .btn {
-  display: inline-block;
-  width: 100%;
-
-  padding: 8px 20px;
   background-color: tomato;
   color: white;
+  display: inline-block;
+  padding: 8px 20px;
   text-transform: uppercase;
   text-align: center;
+  width: 100%;
 
   @media (min-width: 32em) {
     width: auto;

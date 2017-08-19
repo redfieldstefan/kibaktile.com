@@ -1,5 +1,5 @@
 .pattern-breadcrumb {
-  padding: 4em 4em 0 2em;
+  padding: 4em 4em 0 $padding-content-mobile;
 
   @media(min-width: $width-tablet) {
     padding: 2em 4em 0 4em;
@@ -28,6 +28,17 @@
       padding-right: 2em;
     }
   }
+
+  .pattern-share-link {
+    color: $color-mint;
+    padding-left: 7px;
+    -webkit-transition: color .25s, -webkit-transform .25s;
+    transition: .25s;
+
+    &:hover {
+      color: #64B1B8;
+    };
+  }
 }
 
 .pattern-title-container {
@@ -54,11 +65,12 @@
   padding: 2em 0 0;
 
   @media(min-width:  $width-laptop) {
-    padding: 1em 4em;
+    padding: 0em 4em;
     text-align: justify;
     max-width: 1000px;
     line-height: 1.5;
     font-weight: 300;
+    align-self: center;
   }
 }
 
