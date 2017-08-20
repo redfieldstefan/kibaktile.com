@@ -35,7 +35,8 @@ export default class Index extends React.PureComponent {
 
   pickRandomPattern(e) {
     e.preventDefault();
-    const randomPattern = catalog[Math.floor(Math.random()*catalog.length)];
+    const forThePicking = catalog.filter(pattern => pattern !== this.state.pattern);
+    const randomPattern = forThePicking[Math.floor(Math.random()*forThePicking.length)];
 
     this.setState({
       pattern: randomPattern
