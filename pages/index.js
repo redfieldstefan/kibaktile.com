@@ -6,6 +6,7 @@ import homeCarousel from "../assets/images/carousels/home";
 import PatternBar from "../components/pattern-bar";
 import catalog from "../data/catalog";
 import { Link } from 'react-router';
+import refresh from "../assets/images/icons/refresh.png";
 
 //PATTERNS
 import angelicSimple from "../data/catalog/angelic-simple";
@@ -19,14 +20,6 @@ import susanne from "../assets/images/susanne.jpg";
 
 const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Tile+catalog.pdf";
 
-const generateTiles = (pattern) => {
-  const tilesForReturn = [];
-  for(var i = 0; i <= 11; i++) {
-    tilesForReturn.push(pattern.painted);
-  }
-  return tilesForReturn;
-};
-
 export default class Index extends React.PureComponent {
 
   constructor(props) {
@@ -36,35 +29,59 @@ export default class Index extends React.PureComponent {
     this.state = {
       pattern
     }
+
+    this.pickRandomPattern = this.pickRandomPattern.bind(this);
   }
 
-  shouldComponentUpdate() {
-    return false;
+  pickRandomPattern(e) {
+    e.preventDefault();
+    const randomPattern = catalog[Math.floor(Math.random()*catalog.length)];
+
+    this.setState({
+      pattern: randomPattern
+    });
+  }
+
+  generateTiles(pattern) {
+    const tilesForReturn = [];
+    for(var i = 0; i <= 11; i++) {
+      tilesForReturn.push(pattern.painted);
+    }
+    return tilesForReturn;
+  }
+
+  renderHomeHero(pattern) {
+    return (
+      <div className="HomeHero">
+        <button className="pick-random-pattern" onClick={this.pickRandomPattern}>
+          <img src={refresh} />
+        </button>
+        <div className="HomeHero-background">
+          {
+            this.generateTiles(pattern).map((tile, i) => {
+              return (
+                <span key={i} className={`HomeHero-tile ${pattern.rotationClass}`}>
+                  <img src={tile} />
+                </span>
+              )
+            })
+          }
+        </div>
+        <div className="HomeHero-text-container">
+          <div className="HomeHero-text">
+            <h1>Kibak Tile</h1>
+            <h2>Design, make, bake, repeat. Hand-painted ceramic tile made in Oregon since 1981.</h2>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   render () {
     return (
       <BasePage className="home">
 
-        <div className="HomeHero">
-          <div className="HomeHero-background">
-            {
-              generateTiles(this.state.pattern).map((tile, i) => {
-                return (
-                  <span key={i} className={`HomeHero-tile ${this.state.pattern.rotationClass}`}>
-                    <img src={tile} />
-                  </span>
-                )
-              })
-            }
-          </div>
-          <div className="HomeHero-text-container">
-            <div className="HomeHero-text">
-              <h1>Kibak Tile</h1>
-              <h2>Design, make, bake, repeat. Hand-painted ceramic tile made in Oregon since 1981.</h2>
-            </div>
-          </div>
-        </div>
+        {this.renderHomeHero(this.state.pattern)}
         <div className="pattern-cta">
           <p>
             You are looking at our <Link className="random-pattern-link" to={this.state.pattern.url}>

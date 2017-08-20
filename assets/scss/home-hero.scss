@@ -24,7 +24,43 @@
   img {
     width: 100%;
   }
+}
 
+.pick-random-pattern {
+  background-color: rgba(255,255,255,.5);
+  border-radius: 50%;
+  border-style: none;
+  left: 10px;
+  padding: 5px;
+  position: absolute;
+  top: 50px;
+  height: 25px;
+  width: 25px;
+  z-index: 1000;
+  -webkit-transition: width .1s, height .1s, -webkit-transform 2s;
+
+  &:active{
+    background-color: white;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  @media(min-width: $width-tablet) {
+    left: 25px;
+    top: 25px;
+
+    &:hover {
+      height: 35px;
+      width: 35px;
+      cursor: pointer;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
 }
 
 .HomeHero-text-container {
