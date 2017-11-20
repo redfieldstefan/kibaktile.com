@@ -109,7 +109,7 @@ export default class Index extends React.PureComponent {
             </p>
 
             <p className="contact-us">
-              contact us via email at <a href="mailto:info@kibaktile.com">info@kibaktile.com</a>
+              Contact us via email at <a href="mailto:info@kibaktile.com">info@kibaktile.com</a>
             </p>
           </section>
 

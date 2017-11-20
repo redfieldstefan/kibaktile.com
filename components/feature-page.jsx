@@ -61,7 +61,7 @@ export default class FeaturePage extends Component {
         </div>
         <div id="contact" className="feature-page-contact feature-section">
           <h2 className="feature-page-section-header">Contact us</h2>
-          <form action="https://formspree.io/redfield.stefan@gmail.com" method="post" enctype="text/plain">
+          <form action="https://formspree.io/info@kibaktile.com" method="post" enctype="text/plain">
             <span className="name">
               <input type="text" placeholder="Name" name="name" />
             </span>
