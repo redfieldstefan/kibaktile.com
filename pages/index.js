@@ -159,10 +159,6 @@ export default class Index extends React.PureComponent {
         <PatternBar pattern={gammon} alignment="right" backgroundColor="dark-brown" />
         <PatternBar pattern={angelicSimple} alignment="left" backgroundColor="light-gray" />
 
-        <section className="tiles-main">
-          <Carousel slides={homeCarousel} />
-        </section>
-
       </BasePage>
     )
   }

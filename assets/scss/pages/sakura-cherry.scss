@@ -1,0 +1,93 @@
+.sakura-cherry {
+	.feature-page-hero {
+		background-image: url("../images/cherry-background-mobile.jpg");
+
+		@media(min-width: $width-tablet) {
+	    background-image: url("../images/cherry-background-tablet.jpg");
+  	}
+
+	  @media(min-width: $width-laptop) {
+			background-image: url("../images/cherry-background.jpg");
+	  }
+	}
+}
+
+.sakura-step {
+	width: 100%;
+	display: flex;
+	flex-direction: column-reverse;
+	padding: 1em $padding-content-mobile;
+
+	@media(min-width: $width-tablet) {
+		flex-direction: row;
+	}
+}
+
+.sakura-step:nth-child(even) {
+	flex-direction: column-reverse;
+
+	@media(min-width: $width-tablet) {
+		flex-direction: row-reverse;
+	}
+}
+
+.sakura-step-img-container {
+	flex: 1;
+
+	img {
+		width: 100%;
+
+		@media(min-width: $width-tablet) {
+			width: 75%;
+		}
+	}
+}
+
+.sakura-step:nth-child(2) {
+	img {
+		float: right;
+	}
+
+	.sakura-step-text {
+
+		@media(min-width: $width-tablet) {
+			text-align: right;
+		}
+	}
+}
+
+.sakura-step-text {
+	display: flex;
+	flex-direction: row;
+	flex: 1;
+	font-size: 1.15em;
+	padding: 3em 0;
+
+	@media(min-width: $width-tablet) {
+		justify-content: center;
+		flex-direction: column;
+	}
+}
+
+.sakura-step-number {
+	padding-right: .25em;
+	font-weight: bold;
+	font-size: 2em;
+	color: $color-dark-mint;
+
+	@media(min-width: $width-tablet) {
+		padding-bottom: .5em;
+	}
+}
+
+.sakura-step-description {
+	align-self: flex-end;
+	padding-left: .5em;
+	margin-bottom: .25em;
+	max-width: 300px;
+	
+	@media(min-width: $width-tablet) {
+		align-self: auto;
+		max-width: none;
+	}
+}

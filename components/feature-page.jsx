@@ -1,14 +1,25 @@
 import BasePage from "./base-page";
+import classnames from "classnames";
 import { Carousel } from 'react-responsive-carousel';
 import React, { Component } from "react";
 
 export default class FeaturePage extends Component {
   render() {
-    const { background, description, features, installs, name, steps, url } = this.props.pattern;
+    
+    const { 
+      background, 
+      description, 
+      features, 
+      installs, 
+      lineDrawing, 
+      name, 
+      steps, 
+      url 
+    } = this.props.pattern;
 
     return (
-      <BasePage className="FeaturePage">
-        <div className="feature-page-hero" style={{backgroundImage: `url(${background})`}}>
+      <BasePage className={classnames(this.props.className, "FeaturePage")}>
+        <div className="feature-page-hero">
           <div className="pattern-breadcrumb">
             <a href="/catalog/">Patterns</a>
             <span className="divider">/</span>
@@ -16,7 +27,7 @@ export default class FeaturePage extends Component {
           </div>
           <span className="vertical-center">
             <div className="header-container">
-              <h1 className="">{name}</h1>
+              <h1>{name}</h1>
               <div className="feature-page-links">
                 <a href="#installations">Installations</a>
                 <a href="#process">Process</a>
@@ -34,7 +45,7 @@ export default class FeaturePage extends Component {
             }
           </ul>
         </div>
-        <div id="installations" className="feature-pattern-carousel">
+        <div id="installations" className="feature-pattern-carousel feature-section">
           <Carousel emulateTouch showStatus={false} infiniteLoop useKeyboardArrows>
             { installs.map((image) => {
               return (
@@ -45,19 +56,11 @@ export default class FeaturePage extends Component {
             })}
           </Carousel>
         </div>
-        <div id="process" className="feature-page-process">
-          <h2>Process</h2>
-          <ul>
-            <li>
-              <a href="#contact">Contact Us</a>
-            </li>
-            {
-              steps &&
-              steps.map((step, i) => <li key={i}>{step}</li> )
-            }
-          </ul>
+        <div id="process" className="feature-page-process feature-section">
+          {this.props.children}
         </div>
-        <div id="contact" className="feature-page-contact">
+        <div id="contact" className="feature-page-contact feature-section">
+          <h2 className="feature-page-section-header">Contact us</h2>
           <form action="https://formspree.io/redfield.stefan@gmail.com" method="post" enctype="text/plain">
             <span className="name">
               <input type="text" placeholder="Name" name="name" />
@@ -65,7 +68,7 @@ export default class FeaturePage extends Component {
             <span className="email">
               <input type="text" placeholder="Email" name="mail" />
             </span>
-            <input className="body" type="text" name="comment" size="50" />
+            <textarea placeholder="Message" className="body" type="text" name="comment"/>
             <button className="submit" type="submit" value="Send">Send</button>
           </form>
         </div>
