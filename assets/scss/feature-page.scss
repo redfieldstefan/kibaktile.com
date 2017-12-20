@@ -13,15 +13,21 @@
   background: no-repeat center;
   background-size: cover;
 
+
   .divider {
     color: white;
   }
 
   .vertical-center {
+    justify-content: center;
     align-items: center;
     display: flex;
     height: 100%;
     margin-top: -50px;
+
+    @media(min-width: $width-tablet) {
+      justify-content: auto;
+    }
   }
 
   .header-container {
@@ -29,8 +35,9 @@
     color: white;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     padding: 1em 2em;
-    margin-left: $padding-content-mobile;
+    /*margin-left: $padding-content-mobile;*/
     width: 80%;
 
     @media(min-width: $width-tablet) {
