@@ -13,12 +13,15 @@ export default {
   featured: true,
   background: cherryBackground,
   name: "Sakura Cherry",
-  description: `Add subtle texture and understated cool to any
-    kitchen or bath. Gammon plays the field when it comes to
-    your interior statement, from Contemporary to Modern,
-    Industrial to Nordic. Go from understated tone on tone to a
-    more dramatic statement depending on dry-line and color
-    choice.`,
+  description: `The Kibak Cherry Tree mural is the classic corner stone of our
+    Sakura Collection. Inspired by the aesthetic of Japanese art, the
+    image of the Cherry Tree is tied to the themes of mindfulness and
+    living in the present, their blooming time so fleeting.
+    Each unique mural is delicately handcrafted specifically for your
+    space piece by piece, and embodies deliberate artisan skillfulness,
+    and beauty. Whether you choose one delicate branch as an accent,
+    or, to cover an entire surface, the allure of these tiles will influence
+    the mood of your interior space.`,
   lineDrawing,
   installs: [
     squirrelTail1,
