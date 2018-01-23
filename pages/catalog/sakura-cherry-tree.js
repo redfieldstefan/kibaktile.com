@@ -1,9 +1,9 @@
-import sakuraCherry from "../../data/catalog/sakura-cherry";
+import sakuraCherry from "../../data/catalog/sakura-cherry-tree";
 import React from "react";
 import FeaturePage from "../../components/feature-page";
-import processA1 from "../../data/catalog/sakura-cherry/Cherry-Tree-process-A1.png";
-import processA2 from "../../data/catalog/sakura-cherry/Cherry-Tree-process-A2.png";
-import processA3 from "../../data/catalog/sakura-cherry/Cherry-Tree-process-A3.png";
+import processA1 from "../../data/catalog/sakura-cherry-tree/Cherry-Tree-process-A1.png";
+import processA2 from "../../data/catalog/sakura-cherry-tree/Cherry-Tree-process-A2.png";
+import processA3 from "../../data/catalog/sakura-cherry-tree/Cherry-Tree-process-A3.png";
 
 const SakuraCherry = () => {
 	return (

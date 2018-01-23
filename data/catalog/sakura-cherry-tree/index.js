@@ -12,7 +12,7 @@ import lineDrawing from "./Cherry-Tree-Mural-linedrawing.png";
 export default {
   featured: true,
   background: cherryBackground,
-  name: "Sakura Cherry",
+  name: "Sakura Cherry Tree",
   description: `The Kibak Cherry Tree mural is the classic corner stone of our
     Sakura Collection. Inspired by the aesthetic of Japanese art, the
     image of the Cherry Tree is tied to the themes of mindfulness and
@@ -38,5 +38,5 @@ export default {
     "Hand painted and unique for every intallation",
     "Custom colors and arrangement per project"
   ],
-  url: "/catalog/sakura-cherry/"
+  url: "/catalog/sakura-cherry-tree/"
 };

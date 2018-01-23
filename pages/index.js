@@ -24,7 +24,11 @@ export default class Index extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    const pattern = catalog[Math.floor(Math.random()*catalog.length)];
+    const availablePatterns = catalog.filter(pattern => pattern.url !== "/catalog/sakura-cherry-tree/");
+    const pattern = availablePatterns[Math.floor(Math.random()*availablePatterns.length)];
+
+    console.log("pattern")
+    console.log(pattern)
 
     this.state = {
       pattern
@@ -35,12 +39,15 @@ export default class Index extends React.PureComponent {
 
   pickRandomPattern(e) {
     e.preventDefault();
-    const forThePicking = catalog.filter(pattern => pattern !== this.state.pattern);
+    const forThePicking = catalog.filter(pattern => pattern !== this.state.pattern && pattern.url !== "/catalog/sakura-cherry-tree/");
     const randomPattern = forThePicking[Math.floor(Math.random()*forThePicking.length)];
 
     this.setState({
       pattern: randomPattern
     });
+
+    console.log("this state")
+    console.log(this.state.pattern);
   }
 
   generateTiles(pattern) {
