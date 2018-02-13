@@ -18,7 +18,7 @@ import carli from "../assets/images/carli.jpg";
 import maren from "../assets/images/maren.jpg";
 import susanne from "../assets/images/susanne.jpg";
 
-const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2015+Kibak+Tile+catalog.pdf";
+const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2018+Kibak+Tile+catalog.pdf";
 
 export default class Index extends React.PureComponent {
 
