@@ -2,19 +2,20 @@ import BasePage from "./base-page";
 import classnames from "classnames";
 import { Carousel } from 'react-responsive-carousel';
 import React, { Component } from "react";
+import Contact from "./contact";
 
 export default class FeaturePage extends Component {
   render() {
-    
-    const { 
-      background, 
-      description, 
-      features, 
-      installs, 
-      lineDrawing, 
-      name, 
-      steps, 
-      url 
+
+    const {
+      background,
+      description,
+      features,
+      installs,
+      lineDrawing,
+      name,
+      steps,
+      url
     } = this.props.pattern;
 
     return (
@@ -59,19 +60,7 @@ export default class FeaturePage extends Component {
         <div id="process" className="feature-page-process feature-section">
           {this.props.children}
         </div>
-        <div id="contact" className="feature-page-contact feature-section">
-          <h2 className="feature-page-section-header">Contact us</h2>
-          <form action="https://formspree.io/info@kibaktile.com" method="post" enctype="text/plain">
-            <span className="name">
-              <input type="text" placeholder="Name" name="name" />
-            </span>
-            <span className="email">
-              <input type="text" placeholder="Email" name="mail" />
-            </span>
-            <textarea placeholder="Message" className="body" type="text" name="comment"/>
-            <button className="submit" type="submit" value="Send">Send</button>
-          </form>
-        </div>
+        <Contact className="feature-page-contact feature-section" />
       </BasePage>
     );
   }
