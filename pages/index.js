@@ -2,8 +2,8 @@ import React, {PureComponent} from 'react';
 import BasePage from '../components/base-page';
 import Carousel from "../components/carousel";
 import Helmet from 'react-helmet';
-import homeCarousel from "../assets/images/carousels/home";
 import PatternBar from "../components/pattern-bar";
+import Contact from "../components/contact";
 import catalog from "../data/catalog";
 import { Link } from 'react-router';
 import refresh from "../assets/images/icons/refresh.png";
@@ -75,7 +75,7 @@ export default class Index extends React.PureComponent {
     )
   }
 
-  render () {
+  render() {
     return (
       <BasePage className="home">
 
@@ -113,6 +113,8 @@ export default class Index extends React.PureComponent {
           <PatternBar pattern={wallflower} alignment="right" backgroundColor="black" />
 
         </section>
+
+        <Contact />
 
         <PatternBar pattern={gammon} alignment="right" backgroundColor="dark-brown" />
         <PatternBar pattern={angelicSimple} alignment="left" backgroundColor="light-gray" />

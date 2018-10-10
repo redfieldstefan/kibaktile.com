@@ -2,17 +2,23 @@
   background-color: white;
   border-bottom: 1px solid WhiteSmoke;
   display: block;
-  padding: 1.5em 2em;
+  padding: 1.5em;
   position: fixed;
   width: 100%;
   z-index: 1000;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
+  flex-direction: column;
+
+  @media(min-width: $width-tablet) {
+    flex-direction: row;
+    align-items: flex-end;
+    padding: 1.5em 2em;
+  }
 }
 
 .headline-link:hover {
   text-decoration: none;
+  align-items: flex-end;
 }
 
 .headline {
@@ -28,12 +34,21 @@
 }
 
 .header-links {
-  padding-left: 1.5em;
+  padding: 1em 0 0 0;
+
+  @media(min-width: $width-tablet) {
+    padding: 0 0 0 1.5em;
+  }
 }
 
 .header-link {
   letter-spacing: .1em;
-  padding: 1em;
+  padding: 1em 1em 1em 0;
   text-transform: uppercase;
-  font-size: .85em;
+  font-size: .75em;
+
+  @media(min-width: $width-tablet) {
+    padding: 1em;
+    font-size: .85em;
+  }
 }
