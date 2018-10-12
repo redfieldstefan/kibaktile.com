@@ -19,9 +19,14 @@
 }
 
 .pattern-option-line-drawing {
-  width: 150px;
+  width: 100px;
+  max-width: 100%;
   float: left;
   background-color: white;
+
+  @media(min-width: $width-laptop) {
+    width: 150px;
+  }
 }
 
 .pattern-option-name {

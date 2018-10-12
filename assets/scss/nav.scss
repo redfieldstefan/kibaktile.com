@@ -2,12 +2,16 @@
   background-color: white;
   border-bottom: 1px solid WhiteSmoke;
   display: block;
-  padding: 1.5em;
+  padding: 1.5em .75em;
   position: fixed;
   width: 100%;
   z-index: 1000;
   display: flex;
   flex-direction: column;
+
+  @media(min-width: $width-small-mobile) {
+    padding: 1.5em;
+  }
 
   @media(min-width: $width-tablet) {
     flex-direction: row;
