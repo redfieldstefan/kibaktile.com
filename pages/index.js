@@ -2,8 +2,8 @@ import React, {PureComponent} from 'react';
 import BasePage from '../components/base-page';
 import Carousel from "../components/carousel";
 import Helmet from 'react-helmet';
-import homeCarousel from "../assets/images/carousels/home";
 import PatternBar from "../components/pattern-bar";
+import Contact from "../components/contact";
 import catalog from "../data/catalog";
 import { Link } from 'react-router';
 import refresh from "../assets/images/icons/refresh.png";
@@ -14,10 +14,6 @@ import hana from "../data/catalog/hana";
 import gammon from "../data/catalog/gammon";
 import wallflower from "../data/catalog/wallflower";
 
-import carli from "../assets/images/carli.jpg";
-import maren from "../assets/images/maren.jpg";
-import susanne from "../assets/images/susanne.jpg";
-
 const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2018+Kibak+Tile+catalog.pdf";
 
 export default class Index extends React.PureComponent {
@@ -26,9 +22,6 @@ export default class Index extends React.PureComponent {
     super(props);
     const availablePatterns = catalog.filter(pattern => pattern.url !== "/catalog/sakura-cherry-tree/");
     const pattern = availablePatterns[Math.floor(Math.random()*availablePatterns.length)];
-
-    console.log("pattern")
-    console.log(pattern)
 
     this.state = {
       pattern
@@ -45,9 +38,6 @@ export default class Index extends React.PureComponent {
     this.setState({
       pattern: randomPattern
     });
-
-    console.log("this state")
-    console.log(this.state.pattern);
   }
 
   generateTiles(pattern) {
@@ -85,7 +75,7 @@ export default class Index extends React.PureComponent {
     )
   }
 
-  render () {
+  render() {
     return (
       <BasePage className="home">
 
@@ -100,7 +90,6 @@ export default class Index extends React.PureComponent {
         </div>
 
         <section  className="text-main">
-
           <section className="mission-statement">
             <p>
               Kibak Tile is the only company that has been designing and producing dry-line,
@@ -123,45 +112,9 @@ export default class Index extends React.PureComponent {
           <PatternBar pattern={hana} alignment="left" backgroundColor="dark-blue" />
           <PatternBar pattern={wallflower} alignment="right" backgroundColor="black" />
 
-          <section className="home-bios">
-            <section className="home-bio">
-              <span className="home-bio-img-container">
-                <img src={susanne} className="home-bio-img" />
-              </span>
-              <p className="home-bio-p">
-                For decades the <span className="kibak-tile">Kibak Tile</span> line was sold exclusively through Ann Sacks where we earned a reputation of
-                product mastery, swift delivery, as well as of genuinely interested team players and collaborators.
-
-                Joining forces with Fireclay Tile in 2014, the infusion of the <span className="kibak-tile">Kibak</span> point of view and designs brought a fresh perspective to Fireclay Tile and was an instrumental force in their new look and brand aesthetic.
-              </p>
-            </section>
-
-            <section className="home-bio">
-              <span className="home-bio-img-container">
-                <img src={carli} className="home-bio-img" />
-              </span>
-              <p className="home-bio-p">
-                2017 has brought new changes at <span className="kibak-tile">Kibak Tile</span>.
-                Susanne’s daughter Carli has joined the team. With a love of tile deeply imprinted since
-                childhood, Carli’s command and skill level in both product development and outreach
-                injects a fresh and welcome viewpoint and enthusiasm.
-              </p>
-            </section>
-
-            <section className="home-bio">
-              <span className="home-bio-img-container">
-                <img src={maren} className="home-bio-img" />
-              </span>
-              <p className="home-bio-p">
-                Also joining team <span className="kibak-tile">Kibak</span> this year is talented
-                young designer, Mari Burck.  Mari brings a modern, Nordic sensibility to her original
-                tile designs. Mari’s visionary scope and flawless creative instincts  make her a
-                natural fit at <span className="kibak-tile">Kibak Tile</span>.
-              </p>
-            </section>
-          </section>
-
         </section>
+
+        <Contact />
 
         <PatternBar pattern={gammon} alignment="right" backgroundColor="dark-brown" />
         <PatternBar pattern={angelicSimple} alignment="left" backgroundColor="light-gray" />

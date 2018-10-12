@@ -1,10 +1,5 @@
 .HomeHero {
   position: relative;
-  padding-top: 40px;
-
-  @media(min-width: $width-tablet) {
-    padding-top: 6px;
-  }
 }
 
 .HomeHero-background {

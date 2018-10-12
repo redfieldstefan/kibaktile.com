@@ -15,7 +15,7 @@ class PatternOption extends Component {
   render() {
     return (
       <a href={this.props.pattern.url} className="PatternOption" onClick={this.selectPattern}>
-        <img className="pattern-option-line-drawing" src={this.props.pattern.lineDrawing} />
+        <img className="pattern-option-line-drawing" src={this.props.pattern.painted || this.props.pattern.lineDrawing} />
         <span className="pattern-option-name">
           {this.props.pattern.name}
         </span>

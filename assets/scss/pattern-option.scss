@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 1em;
-  padding: 1em 3em;
+  padding: 1em 2em;
   width: 50%;
 
   &:hover {
@@ -14,16 +14,12 @@
 
   @media(min-width: $width-tablet) {
     flex-direction: row;
-    width: 100%/3;
-  }
-
-  @media(min-width: $width-laptop) {
-    width: 25%;
+    width: calc(100%/3);
   }
 }
 
 .pattern-option-line-drawing {
-  width: 85px;
+  width: 150px;
   float: left;
   background-color: white;
 }
