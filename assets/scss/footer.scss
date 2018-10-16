@@ -1,0 +1,28 @@
+.Footer {
+  width: 100%;
+  background-color: $color-black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  justify-content: flex-end;
+  text-align: center;
+
+	@media(min-width: $width-tablet) {
+  	flex-direction: row;
+  	text-align: default;
+  }
+
+  li {
+  	padding: 2.5px;
+
+	 	@media(min-width: $width-tablet) {
+	  	padding-left: 10px;
+	  }
+  }
+
+  a {
+  	color: white;
+  }
+
+}

@@ -2,6 +2,7 @@ import React from "react";
 import classnames from "classnames";
 import Helmet from 'react-helmet';
 import Nav from "./nav";
+import Footer from "./Footer";
 
 const defaultTitle= "Kibak Tile";
 const defaultDescription = "Designing, hand painting, and firing ceramic tiles of rare quality and excellence since 1981";
@@ -21,6 +22,8 @@ const BasePage = ({children, className, description, title}) => (
     <div className="base-body">
       {children}
     </div>
+
+    <Footer />
   </div>
 );
 
