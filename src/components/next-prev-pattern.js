@@ -6,7 +6,7 @@ import prevArrow from "../assets/images/icons/prev-arrow.png";
 const NextPrevPattern = ({pattern, direction}) => (
   <Link className={`NextPrevPattern ${direction}`} to={pattern.url}>
     <span className="NextPrevPattern-img">
-      <img src={pattern.lineDrawing} />
+      <img src={pattern.painted || pattern.lineDrawing} />
     </span>
     <div className={`text-and-arrow ${direction}`}>
     <span className="text-and-arrow-name">{pattern.name}</span>

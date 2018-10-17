@@ -16,12 +16,12 @@ export default {
   painted: whiteConfig,
   fourPiece,
   slides: [
-    lineDrawing,
-    fourPiece,
-    whiteConfig,
     whiteGreyConfig,
+    whiteConfig,
+    fourPiece,
     yelBlueGreenConfig,
-    yellowWhiteConfig
+    yellowWhiteConfig,
+    lineDrawing
   ],
   url: "/catalog/angelic-simple/",
   rotationClass: "rotate-right"

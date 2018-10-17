@@ -3,6 +3,9 @@ import classnames from "classnames";
 import { Carousel } from 'react-responsive-carousel';
 import React, { Component } from "react";
 import Contact from "./contact";
+import catalog from "../data/catalog";
+import NextPrevPattern from "./next-prev-pattern";
+
 
 export default class FeaturePage extends Component {
   render() {
@@ -17,6 +20,11 @@ export default class FeaturePage extends Component {
       steps,
       url
     } = this.props.pattern;
+
+    const patternIndex = catalog.indexOf(this.props.pattern);
+    const lastIndex = catalog.length - 1;
+    const prevPattern = patternIndex === 0 ? catalog[lastIndex] : catalog[patternIndex - 1];
+    const nextPattern = patternIndex === lastIndex ? catalog[0] : catalog[patternIndex + 1];
 
     return (
       <BasePage 
@@ -65,6 +73,10 @@ export default class FeaturePage extends Component {
           {this.props.children}
         </div>
         <Contact className="feature-page-contact feature-section" />
+        <div className="next-prev-arrows">
+          <NextPrevPattern direction="previous" pattern={prevPattern} />
+          <NextPrevPattern direction="next"  pattern={nextPattern} />
+        </div>
       </BasePage>
     );
   }
