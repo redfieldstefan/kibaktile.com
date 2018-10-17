@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import PatternBar from "../components/pattern-bar";
 import Contact from "../components/contact";
 import catalog from "../data/catalog";
-import { Link } from 'react-router';
+import { Link } from 'gatsby';
 import refresh from "../assets/images/icons/refresh.png";
 
 //PATTERNS

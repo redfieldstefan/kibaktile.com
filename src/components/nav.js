@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "gatsby";
 
 const Nav = () => (
   <div className="header">
@@ -10,7 +10,7 @@ const Nav = () => (
       <a className="header-link" href="/catalog/">Catalog</a>
       <a className="header-link" href="/catalog/sakura-cherry-tree/">Sakura</a>
       <a className="header-link" href="/about/">About Us</a>
-      <a className="header-link" href="mailto:info@kibaktile.com">Contact</a>
+      <a className="header-link" href="/#contact">Contact</a>
     </span>
   </div>
 );

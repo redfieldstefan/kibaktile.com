@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link } from "gatsby";
 import nextArrow from "../assets/images/icons/next-arrow.png";
 import prevArrow from "../assets/images/icons/prev-arrow.png";
 

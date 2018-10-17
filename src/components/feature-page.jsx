@@ -19,7 +19,11 @@ export default class FeaturePage extends Component {
     } = this.props.pattern;
 
     return (
-      <BasePage className={classnames(this.props.className, "FeaturePage")}>
+      <BasePage 
+        title={`${name} | Kibak Tile`}
+        description={description} 
+        className={classnames(this.props.className, "FeaturePage")}
+      >
         <div className="feature-page-hero">
           <div className="pattern-breadcrumb">
             <a href="/catalog/">Patterns</a>

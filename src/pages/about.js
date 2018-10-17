@@ -6,7 +6,7 @@ import maren from "../assets/images/maren.jpg";
 import susanne from "../assets/images/susanne.jpg";
 
 const About = () => (
-  <BasePage>
+  <BasePage title="About Us | Kibak Tile">
     <section className="home-bios">
       <section className="home-bio">
         <span className="home-bio-img-container">

@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Link } from 'gatsby';
 import React from "react";
 
 const generateTiles = (tile) => {
