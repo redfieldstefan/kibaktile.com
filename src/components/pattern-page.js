@@ -60,7 +60,9 @@ class PatternPage extends Component {
             { name: "twitter:url", content: baseUrl },
             { name: "twitter:image", content: pattern.painted }
           ]}
-        />
+        >
+          <link rel="icon" type="image/png" href={`${pattern.painted}?t=${Date.now()}`} sizes="16x16" />
+        </Helmet>
         <div className="PatternPage">
           <div className="pattern-breadcrumb">
             <a href="/catalog/">Patterns</a>

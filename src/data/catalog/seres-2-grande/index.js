@@ -16,13 +16,13 @@ export default {
   painted: blueWhiteConfig,
   fourPiece,
   slides: [
-    lineDrawing,
-    fourPiece,
-    blueWhiteConfig,
     greenConfig,
+    blueWhiteConfig,
     neutralConfig,
     neutralShowerInstall,
-    neutralTubInstall
+    neutralTubInstall,
+    fourPiece,
+    lineDrawing
   ],
   url: "/catalog/seres-2-grande/",
   rotationClass: "rotate-standard"
