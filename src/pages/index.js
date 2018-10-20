@@ -7,6 +7,7 @@ import Contact from "../components/contact";
 import catalog from "../data/catalog";
 import { Link } from 'gatsby';
 import refresh from "../assets/images/icons/refresh.png";
+import placeholder from "../assets/images/placeholder.jpg";
 
 //PATTERNS
 import angelicSimple from "../data/catalog/angelic-simple";
@@ -20,14 +21,21 @@ export default class Index extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    const availablePatterns = catalog.filter(pattern => pattern.url !== "/catalog/sakura-cherry-tree/");
-    const pattern = availablePatterns[Math.floor(Math.random()*availablePatterns.length)];
 
     this.state = {
-      pattern
+      pattern: {painted: ""}
     }
 
     this.pickRandomPattern = this.pickRandomPattern.bind(this);
+  }
+
+  componentDidMount() {
+    const availablePatterns = catalog.filter(pattern => pattern.url !== "/catalog/sakura-cherry-tree/");
+    const pattern = availablePatterns[Math.floor(Math.random()*availablePatterns.length)];
+
+    this.setState({
+      pattern
+    })
   }
 
   pickRandomPattern(e) {
@@ -59,7 +67,7 @@ export default class Index extends React.PureComponent {
             this.generateTiles(pattern).map((tile, i) => {
               return (
                 <span key={i} className={`HomeHero-tile ${pattern.rotationClass}`}>
-                  <img src={tile} />
+                  <img src={tile || placeholder} />
                 </span>
               )
             })
@@ -80,14 +88,17 @@ export default class Index extends React.PureComponent {
       <BasePage className="home">
 
         {this.renderHomeHero(this.state.pattern)}
-        <div className="pattern-cta">
-          <p>
-            You are looking at our <Link className="random-pattern-link" to={this.state.pattern.url}>
-              {this.state.pattern.name}
-            </Link> pattern. View more of our <Link to="/catalog/">Catalog</Link> online or
-            download the <a href={pdfUrl}>full PDF</a>
-          </p>
-        </div>
+        {
+          this.state.pattern &&          
+          <div className="pattern-cta">
+            <p>
+              You are looking at our <Link className="random-pattern-link" to={this.state.pattern.url}>
+                {this.state.pattern.name}
+              </Link> pattern. View more of our <Link to="/catalog/">Catalog</Link> online or
+              download the <a href={pdfUrl}>full PDF</a>
+            </p>
+          </div>
+        }
 
         <section  className="text-main">
           <section className="mission-statement">
