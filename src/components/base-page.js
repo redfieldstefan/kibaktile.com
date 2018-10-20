@@ -18,8 +18,17 @@ const BasePage = ({children, className, description, title}) => (
         { name: "description", content: description ? description : defaultDescription },
       ]}
       link={[{href: "https://fonts.googleapis.com/css?family=Work+Sans"}]}
-    />
-
+    >
+      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-56313656-5"></script>
+      <script>
+        {
+          `window.dataLayer = window.dataLayer || []
+          function gtag(){dataLayer.push(arguments)}
+          gtag('js', new Date())
+          gtag('config', 'UA-56313656-5')`
+        }
+      </script>
+    </Helmet>
     <Nav />
 
     <div className="base-body">
