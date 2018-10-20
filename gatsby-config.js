@@ -1,6 +1,7 @@
 module.exports = {
+  pathPrefix: "/kibaktile.com",
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Kibak Tile',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
