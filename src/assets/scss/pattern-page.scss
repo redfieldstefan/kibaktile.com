@@ -1,0 +1,150 @@
+.pattern-breadcrumb {
+  padding: 4em 4em 0 $padding-content-mobile;
+
+  @media(min-width: $width-tablet) {
+    padding: 2em 4em 0 4em;
+  }
+}
+
+.pattern-text {
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  line-height: 1.5;
+  padding: 2em $padding-content-mobile;
+
+  @media(min-width: $width-tablet) {
+    padding: 2em 4em;
+  }
+
+  @media(min-width: $width-laptop) {
+    flex-direction: row;
+  }
+
+  p {
+    margin-bottom: 1em;
+
+    @media(min-width: $width-tablet) {
+      padding-right: 2em;
+    }
+  }
+
+  .pattern-share-link {
+    color: $color-mint;
+    padding-left: 7px;
+    -webkit-transition: color .25s, -webkit-transform .25s;
+    transition: .25s;
+
+    &:hover {
+      color: #64B1B8;
+    };
+  }
+}
+
+.pattern-title-container {
+  align-items: center;
+  justify-content: center;
+  background-color: $color-slate-grey;
+  display: flex;
+}
+
+.pattern-title {
+  color: white;
+  letter-spacing: .025em;
+  font-weight: 300;
+  padding: 1em;
+
+  @media(min-width: $width-laptop) {
+    padding: 2em;
+    font-size: 2.5em;
+  }
+}
+
+.pattern-description {
+  font-size: 1.15em;
+  padding: 2em 0 0;
+
+  @media(min-width:  $width-laptop) {
+    padding: 0em 4em;
+    text-align: justify;
+    max-width: 1000px;
+    line-height: 1.5;
+    font-weight: 300;
+    align-self: center;
+  }
+}
+
+.pattern-carousel {
+  padding: 1em $padding-content-mobile;
+
+  @media(min-width: $width-tablet) {
+    padding: 1em 4em;
+  }
+
+  .carousel .slide {
+    background: none;
+  }
+
+  .carousel.carousel-slider .control-arrow {
+    background: black;
+  }
+  
+  .carousel .slide img {
+    vertical-align: center;
+    border: 0;
+    width: 50%;
+  }
+
+  .carousel-img-container {
+    width: 100%;
+
+    @media(min-width: $width-tablet) {
+      width: 600px;
+    }
+  }
+}
+
+
+.carousel .slide {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.carousel .thumbs-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .thumb {
+  width: 50px;
+}
+
+.next-prev-arrows {
+  display: block;
+  width: 100%;
+  padding: 3em 0;
+  margin-bottom: 3em;
+
+  .previous {
+    float: left;
+    width: 100%;
+
+    @media(min-width: $width-tablet) {
+      width: auto;
+    }
+  }
+
+  .next {
+    float: right;
+    width: 100%;
+
+    @media(min-width: $width-tablet) {
+      width: auto;
+    }
+  }
+}

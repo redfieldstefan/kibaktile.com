@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/*helpers*/
+@import "helpers/colors.scss";
+@import "helpers/width.scss";
+@import "helpers/padding.scss";
+@import "pages/sakura-cherry.scss";
+@import "./base-page.scss";
+@import "./catalog.scss";
+@import "./carousel.scss";
+@import "./feature-page.scss";
+@import "./nav.scss";
+@import "./home.scss";
+@import "./home-hero.scss";
+@import "./next-prev-pattern";
+@import "./pattern-bar.scss";
+@import "./pattern-page.scss";
+@import "./pattern-option.scss";
+@import "./contact.scss";
+@import "./footer.scss";
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  list-style: none;
+  font-family: 'Work Sans', sans-serif;
+}
+
+main {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+
+h1, h2, h3, h4, h5, p, a {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+}
+
+img {
+  margin: 0;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: $color-link;
+
+  &:hover {
+    text-decoration: underline;
+  };
+
+}
+
+.btn {
+  background-color: tomato;
+  color: white;
+  display: inline-block;
+  padding: 8px 20px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+
+  @media (min-width: 32em) {
+    width: auto;
+  }
+}
+
+.strong {
+  font-weight: 600;
+}
+
+.mobile-show {
+  @media (min-width: 32em) {
+    display: none;
+  }
+}
+
+.mobile-hide {
+  display: none;
+
+  @media (min-width: 32em) {
+    display: inline-block;
+  }
+}
+
+.divider {
+  padding: 0 .5em;
+}
+
+.color-dark-mint {
+  color: $color-dark-mint;
+}
