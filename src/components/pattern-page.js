@@ -65,7 +65,7 @@ class PatternPage extends Component {
         </Helmet>
         <div className="PatternPage">
           <div className="pattern-breadcrumb">
-            <a href="/catalog/">Patterns</a>
+            <a href="/catalog/">Catalog</a>
             <span className="divider">/</span>
             <a href={pattern.url}>{pattern.name}</a>
           </div>

@@ -15,10 +15,10 @@ export default {
     patterns currently trending. Modern, Asian, Contemporary,
     Industrial, Nordic, this pattern really does it all.`,
   slides: [
-    lineDrawing,
-    fourPiece,
     yellowBlueConfig,
-    yellowGreenConfig
+    yellowGreenConfig,
+    fourPiece,
+    lineDrawing
   ],
   url: "/catalog/kabuki-drop/"
 };

@@ -16,12 +16,12 @@ export default {
   painted: DEKQConfig,
   fourPiece,
   slides: [
-    lineDrawing,
-    fourPiece,
     DBGRConfig,
     DEKQConfig,
     GSConfig,
-    JKWhiteConfig
+    JKWhiteConfig,
+    fourPiece,
+    lineDrawing,
   ],
   url: "/catalog/wallflower/"
 };

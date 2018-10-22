@@ -16,7 +16,7 @@
   width: 100%;
 
   @media(min-width: $width-laptop) {
-    padding: 2em;
+    padding: 40px 40px 40px 0px;
     width: 40%;
   }
 
@@ -70,11 +70,11 @@
 
 .pattern-carousel {
   width: 100%;
-  float: right;
+  float: left;
   padding: 2em $padding-content-mobile;
 
   @media(min-width: $width-laptop) {
-    padding: 1em 2em;
+    padding: 40px;
     width: 60%;
   }
 
