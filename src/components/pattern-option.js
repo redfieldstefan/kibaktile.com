@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Price from "./price";
 
 class PatternOption extends Component {
 
