@@ -14,10 +14,10 @@ export default {
     ramp up the organic feel or keep it polished modern. Ageless
     yet hip, Sakura Star is as hip/cool as it gets.`,
   slides: [
-    lineDrawing,
-    fourPiece,
     sashikoStarsBBB,
     sashikoStarsRV,
+    fourPiece,
+    lineDrawing
   ],
   url: "/catalog/sashiko-stars/"
 };

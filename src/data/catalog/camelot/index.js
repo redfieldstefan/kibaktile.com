@@ -19,12 +19,12 @@ export default {
   painted: timelessCamelot,
   fourPiece,
   slides: [
-    lineDrawing,
+    GRIHConfig,
     fourPiece,
     timelessCamelot,
     cWFourConfig,
-    GRIHConfig,
-    camelotBacksplash
+    camelotBacksplash,
+    lineDrawing
   ],
   url: "/catalog/camelot/",
   rotationClass: "rotate-right"

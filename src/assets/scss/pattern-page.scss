@@ -1,32 +1,27 @@
 .pattern-breadcrumb {
-  padding: 4em 4em 0 $padding-content-mobile;
+  padding: 2em 2em 0 $padding-content-mobile;
 
   @media(min-width: $width-tablet) {
-    padding: 2em 4em 0 4em;
+    padding: 2em 2em 0 2em;
   }
 }
 
 .pattern-text {
+  float: left;
   display: flex;
   flex-direction: column;
   font-weight: 300;
   line-height: 1.5;
-  padding: 2em $padding-content-mobile;
-
-  @media(min-width: $width-tablet) {
-    padding: 2em 4em;
-  }
+  padding: 0 $padding-content-mobile;
+  width: 100%;
 
   @media(min-width: $width-laptop) {
-    flex-direction: row;
+    padding: 40px 40px 40px 0px;
+    width: 40%;
   }
 
   p {
-    margin-bottom: 1em;
-
-    @media(min-width: $width-tablet) {
-      padding-right: 2em;
-    }
+    margin-bottom: 20px;
   }
 
   .pattern-share-link {
@@ -52,11 +47,11 @@
   color: white;
   letter-spacing: .025em;
   font-weight: 300;
-  padding: 1em;
+  padding: 20px;
 
   @media(min-width: $width-laptop) {
-    padding: 2em;
     font-size: 2.5em;
+    padding: 40px;
   }
 }
 
@@ -65,7 +60,6 @@
   padding: 2em 0 0;
 
   @media(min-width:  $width-laptop) {
-    padding: 0em 4em;
     text-align: justify;
     max-width: 1000px;
     line-height: 1.5;
@@ -75,10 +69,13 @@
 }
 
 .pattern-carousel {
-  padding: 1em $padding-content-mobile;
+  width: 100%;
+  float: left;
+  padding: 2em $padding-content-mobile;
 
-  @media(min-width: $width-tablet) {
-    padding: 1em 4em;
+  @media(min-width: $width-laptop) {
+    padding: 40px;
+    width: 60%;
   }
 
   .carousel .slide {
@@ -104,7 +101,6 @@
   }
 }
 
-
 .carousel .slide {
   background-color: white;
   display: flex;
@@ -125,10 +121,14 @@
 }
 
 .next-prev-arrows {
-  display: block;
+  display: flex;
   width: 100%;
-  padding: 3em 0;
-  margin-bottom: 3em;
+  padding: 40px 0;
+  justify-content: space-between;
+
+  @media(min-width: $width-tablet) {
+    padding: 40px 20px;
+  }
 
   .previous {
     float: left;
