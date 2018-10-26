@@ -25,5 +25,6 @@ export default {
     lineDrawing
   ],
   url: "/catalog/seres-2-grande/",
-  rotationClass: "rotate-standard"
+  rotationClass: "rotate-standard",
+  priceGroup: 1
 };

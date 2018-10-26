@@ -20,5 +20,6 @@ export default {
     persianStar2GreenBlueRed,
   ],
   url: "/catalog/persian-star-2/",
-  rotationClass: "rotate-standard"
+  rotationClass: "rotate-standard",
+  priceGroup: 1
 };

@@ -27,5 +27,6 @@ export default {
     camelotBacksplash
   ],
   url: "/catalog/camelot/",
-  rotationClass: "rotate-right"
+  rotationClass: "rotate-right",
+  priceGroup: 1
 };

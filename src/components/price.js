@@ -1,6 +1,7 @@
 import React from "react";
+import priceGroups, { findPricePerFoot } from "../helpers/price-groups";
 
-const Price = ({dimension, cost}) => (
+const Price = () => (
 	<div className="price-container">
 		<p className="price-dimension">{dimension}</p>
 		<p className="price-cost">{cost}</p>

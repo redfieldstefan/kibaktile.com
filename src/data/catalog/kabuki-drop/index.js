@@ -20,5 +20,6 @@ export default {
     yellowBlueConfig,
     yellowGreenConfig
   ],
-  url: "/catalog/kabuki-drop/"
+  url: "/catalog/kabuki-drop/",
+  priceGroup: 1
 };

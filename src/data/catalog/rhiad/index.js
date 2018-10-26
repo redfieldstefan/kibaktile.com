@@ -21,5 +21,6 @@ export default {
     rhiadMWWhite,
   ],
   url: "/catalog/rhiad/",
-  rotationClass: "rotate-right"
+  rotationClass: "rotate-right",
+  priceGroup: 3
 };

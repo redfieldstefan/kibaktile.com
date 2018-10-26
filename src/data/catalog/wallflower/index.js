@@ -23,5 +23,6 @@ export default {
     GSConfig,
     JKWhiteConfig
   ],
-  url: "/catalog/wallflower/"
+  url: "/catalog/wallflower/",
+  priceGroup: 2
 };

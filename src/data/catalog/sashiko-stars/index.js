@@ -19,5 +19,6 @@ export default {
     sashikoStarsBBB,
     sashikoStarsRV,
   ],
-  url: "/catalog/sashiko-stars/"
+  url: "/catalog/sashiko-stars/",
+  priceGroup: 3
 };

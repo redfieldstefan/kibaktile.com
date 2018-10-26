@@ -20,5 +20,6 @@ export default {
     whiteConfig,
     blackConfig
   ],
-  url: "/catalog/gammon/"
+  url: "/catalog/gammon/",
+  priceGroup: 3
 };

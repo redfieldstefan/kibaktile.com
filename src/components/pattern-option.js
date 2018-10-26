@@ -20,6 +20,9 @@ class PatternOption extends Component {
         <span className="pattern-option-name">
           {this.props.pattern.name}
         </span>
+        {
+          pattern.dimensions.map((dimension) => <Price dimension={dimension} group={pattern.priceGroup} />)
+        }
       </a>
     );
   }

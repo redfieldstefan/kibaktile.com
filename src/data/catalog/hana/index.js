@@ -27,5 +27,6 @@ export default {
     hanaSpeckledWhite
   ],
   url: "/catalog/hana/",
-  rotationClass: "rotate-mirror"
+  rotationClass: "rotate-mirror",
+  priceGroup: 2
 };

@@ -24,5 +24,6 @@ export default {
     lineDrawing
   ],
   url: "/catalog/angelic-simple/",
-  rotationClass: "rotate-right"
+  rotationClass: "rotate-right",
+  priceGroup: 2 
 };
