@@ -21,5 +21,6 @@ export default {
     blackConfig
   ],
   url: "/catalog/gammon/",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 3
 };

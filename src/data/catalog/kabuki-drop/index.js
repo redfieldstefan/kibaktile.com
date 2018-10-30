@@ -21,5 +21,6 @@ export default {
     yellowGreenConfig
   ],
   url: "/catalog/kabuki-drop/",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 1
 };

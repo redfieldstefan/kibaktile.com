@@ -25,5 +25,6 @@ export default {
   ],
   url: "/catalog/angelic-simple/",
   rotationClass: "rotate-right",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 2 
 };

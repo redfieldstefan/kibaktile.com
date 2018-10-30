@@ -38,5 +38,6 @@ export default {
     "Hand painted and unique for every intallation",
     "Custom colors and arrangement per project"
   ],
+  dimensions: ["6x6", "8x8"],
   url: "/catalog/sakura-cherry-tree/"
 };

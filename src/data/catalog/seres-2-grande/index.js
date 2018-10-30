@@ -26,5 +26,6 @@ export default {
   ],
   url: "/catalog/seres-2-grande/",
   rotationClass: "rotate-standard",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 1
 };

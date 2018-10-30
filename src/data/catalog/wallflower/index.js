@@ -24,5 +24,6 @@ export default {
     JKWhiteConfig
   ],
   url: "/catalog/wallflower/",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 2
 };

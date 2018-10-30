@@ -16,7 +16,7 @@ const priceGroups = {
 	},
 };
 
-const findPricePerFoot = (price, dimension) => {
+export const findPricePerFoot = (price, dimension) => {
 	if(dimension === "4x4") {
 		return price * 9;
 	} else if (dimension === "6x6") {
@@ -26,5 +26,4 @@ const findPricePerFoot = (price, dimension) => {
 	}
 };
 
-export findPricePerFoot;
 export default priceGroups;

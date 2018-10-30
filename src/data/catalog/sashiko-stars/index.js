@@ -20,5 +20,6 @@ export default {
     sashikoStarsRV,
   ],
   url: "/catalog/sashiko-stars/",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 3
 };

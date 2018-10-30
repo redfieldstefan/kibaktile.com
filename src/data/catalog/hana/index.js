@@ -28,5 +28,6 @@ export default {
   ],
   url: "/catalog/hana/",
   rotationClass: "rotate-mirror",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 2
 };

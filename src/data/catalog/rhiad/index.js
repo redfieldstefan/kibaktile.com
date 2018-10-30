@@ -22,5 +22,6 @@ export default {
   ],
   url: "/catalog/rhiad/",
   rotationClass: "rotate-right",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 3
 };

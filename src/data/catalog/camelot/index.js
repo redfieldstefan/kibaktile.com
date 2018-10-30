@@ -28,5 +28,6 @@ export default {
   ],
   url: "/catalog/camelot/",
   rotationClass: "rotate-right",
+  dimensions: ["6x6", "8x8"],
   priceGroup: 1
 };
