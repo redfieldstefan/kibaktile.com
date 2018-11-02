@@ -17,14 +17,14 @@ export default {
   painted: hanaBlueWhiteline,
   fourPiece,
   slides: [
-    lineDrawing,
-    fourPiece,
     hanaBlueWhiteline,
     hanaCPConfig,
     hanaEAGRConfig,
     hanaGGGRConfig,
     hanaGS2Config,
-    hanaSpeckledWhite
+    hanaSpeckledWhite,
+    fourPiece,
+    lineDrawing
   ],
   url: "/catalog/hana/",
   rotationClass: "rotate-mirror",

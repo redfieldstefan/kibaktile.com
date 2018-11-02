@@ -65,15 +65,17 @@ class PatternPage extends Component {
         </Helmet>
         <div className="PatternPage">
           <div className="pattern-breadcrumb">
-            <a href="/catalog/">Patterns</a>
+            <a href="/catalog/">Catalog</a>
             <span className="divider">/</span>
             <a href={pattern.url}>{pattern.name}</a>
+          </div>
+          <div className="pattern-carousel">
+            {this.renderCarousel(pattern.slides)}
           </div>
           <div className="pattern-text">
             <span className="pattern-title-container">
               <h1 className="pattern-title">{pattern.name}</h1>
             </span>
-
             <span className="pattern-description">
               <p>
                 {
@@ -81,7 +83,6 @@ class PatternPage extends Component {
                   defaultDescription
                 }
               </p>
-
               <p>
                 Suitable for interior wall, countertop and low-traffic floors. Exterior use in
                 non-freezing climates only. Tile dimensions are 6" x 6" and 8" x 8".
@@ -101,15 +102,7 @@ class PatternPage extends Component {
               >
                 Twitter
               </a>
-
             </span>
-
-
-          </div>
-          <div className="pattern-carousel">
-            {
-              this.renderCarousel(pattern.slides)
-            }
           </div>
           <div className="next-prev-arrows">
             <NextPrevPattern direction="previous" pattern={prevPattern} />

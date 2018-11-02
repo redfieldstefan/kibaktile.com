@@ -14,11 +14,11 @@ export default {
     impact and longevity Rhiad has to be a contender for every
     interior storyboard.`,
   slides: [
-    lineDrawing,
-    fourPiece,
     rhiadGreyWhite,
     rhiadBlueWhite,
     rhiadMWWhite,
+    fourPiece,
+    lineDrawing
   ],
   url: "/catalog/rhiad/",
   rotationClass: "rotate-right",

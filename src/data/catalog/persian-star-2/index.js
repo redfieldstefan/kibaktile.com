@@ -13,11 +13,11 @@ export default {
     subtle with this enduring classic tile design or ramp up the
     drama using our specialty glazes for major impact.`,
   slides: [
-    lineDrawing,
-    fourPiece,
     persianStar2GRLU,
     persianStar2SageBronzePink,
     persianStar2GreenBlueRed,
+    fourPiece,
+    lineDrawing
   ],
   url: "/catalog/persian-star-2/",
   rotationClass: "rotate-standard",

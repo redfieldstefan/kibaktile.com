@@ -15,10 +15,10 @@ export default {
   painted: blackConfig,
   fourPiece,
   slides: [
-    lineDrawing,
-    fourPiece,
+    blackConfig,
     whiteConfig,
-    blackConfig
+    fourPiece,
+    lineDrawing
   ],
   url: "/catalog/gammon/",
   dimensions: ["6x6", "8x8"],

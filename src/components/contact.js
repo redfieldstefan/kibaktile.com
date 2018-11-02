@@ -9,7 +9,7 @@ export default class Contact extends Component {
     return (
       <div id="contact" className={classnames(className, "Contact")}>
         <h2 className="feature-page-section-header">Contact us</h2>
-        <form action="https://formspree.io/info@kibaktile.com" method="post" enctype="text/plain">
+        <form action="https://formspree.io/info@kibaktile.com" method="POST">
           <span className="name">
             <input type="text" placeholder="Name" name="name" />
           </span>
