@@ -20,10 +20,10 @@ export default {
   fourPiece,
   slides: [
     GRIHConfig,
-    fourPiece,
     timelessCamelot,
     cWFourConfig,
     camelotBacksplash,
+    fourPiece,
     lineDrawing
   ],
   url: "/catalog/camelot/",

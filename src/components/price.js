@@ -1,10 +1,15 @@
 import React from "react";
-import priceGroups, { findPricePerFoot } from "../helpers/price-groups";
 
-const Price = ({dimension, cost}) => (
+const Price = ({dimension, cost, placeholder}) => (
 	<div className="price-container">
-		<p className="price-dimension">{dimension}:</p>
-		<p className="price-cost">&nbsp;${cost} sq ft</p>
+		{
+			placeholder
+				? <p className="price-placeholder">{placeholder}</p>
+				: <React.Fragment>
+						{dimension && <p className="price-dimension">{dimension}:</p>}
+						{cost && <p className="price-cost">&nbsp;${cost} sq ft</p>}
+					</React.Fragment>
+		}
 	</div>
 );
 

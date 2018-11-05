@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Price from "./price";
-import priceGroups, {findPricePerFoot} from "../helpers/price-groups";
+import {calculateCost} from "../helpers/price-groups";
 
 class PatternOption extends Component {
 
@@ -12,17 +12,6 @@ class PatternOption extends Component {
 
   selectPattern() {
     return this.props.onClick(this.props.pattern);
-  }
-
-  calculateCost = (dimension) => {
-    const { priceGroup } = this.props.pattern;
-
-    if(!priceGroup) {
-      return;
-    }
-
-    const pricePerTile = priceGroups[priceGroup][dimension];
-    return findPricePerFoot(pricePerTile, dimension);
   }
 
   render() {
@@ -39,7 +28,7 @@ class PatternOption extends Component {
             {
               pattern.dimensions &&
               pattern.priceGroup &&
-              pattern.dimensions.map((dimension) => <Price key={`${pattern.name}-${dimension}`} cost={this.calculateCost(dimension)} dimension={dimension} />)
+              pattern.dimensions.map((dimension) => <Price key={`${pattern.name}-${dimension}`} cost={calculateCost(pattern.priceGroup, dimension)} dimension={dimension} />)
             }
           </div>
         </div>

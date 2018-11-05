@@ -16,6 +16,15 @@ const priceGroups = {
 	},
 };
 
+export const calculateCost = (priceGroup, dimension) => {
+  if(!priceGroup) {
+    return;
+  }
+
+  const pricePerTile = priceGroups[priceGroup][dimension];
+  return findPricePerFoot(pricePerTile, dimension);
+};
+
 export const findPricePerFoot = (price, dimension) => {
 	if(dimension === "4x4") {
 		return price * 9;

@@ -4,6 +4,8 @@ import { Carousel } from 'react-responsive-carousel';
 import Helmet from 'react-helmet';
 import NextPrevPattern from "./next-prev-pattern";
 import catalog from "../data/catalog";
+import Price from "./price";
+import {calculateCost} from "../helpers/price-groups";
 
 const defaultDescription = `Infuse your space with beautiful pattern and color using decorative
   ceramic tile. There are many different ways to feature decorative tile in any project. Use
@@ -87,21 +89,28 @@ class PatternPage extends Component {
                 Suitable for interior wall, countertop and low-traffic floors. Exterior use in
                 non-freezing climates only. Tile dimensions are 6" x 6" and 8" x 8".
               </p>
-              <span className="pattern-share-label">Share on</span>
-              <a
-                className="pattern-share-link"
-                target="_blank"
-                href={`http://www.facebook.com/share.php?u=${baseUrl}`}
-              >
-                Facebook
-              </a>
-              <a
-                className="pattern-share-link"
-                target="_blank"
-                href={`http://twitter.com/intent/tweet?text=${pattern.name}+${baseUrl}`}
-              >
-                Twitter
-              </a>
+              {
+                pattern.dimensions && pattern.dimensions.map(dimension => (
+                  <Price key={`${pattern.name}-${dimension}`} cost={calculateCost(pattern.priceGroup, dimension)} dimension={dimension} />)
+                ) 
+              }
+              <div className="pattern-share-conatiner">
+                <span className="pattern-share-label">Share on</span>
+                <a
+                  className="pattern-share-link"
+                  target="_blank"
+                  href={`http://www.facebook.com/share.php?u=${baseUrl}`}
+                >
+                  Facebook
+                </a>
+                <a
+                  className="pattern-share-link"
+                  target="_blank"
+                  href={`http://twitter.com/intent/tweet?text=${pattern.name}+${baseUrl}`}
+                >
+                  Twitter
+                </a>
+              </div>
             </span>
           </div>
           <div className="next-prev-arrows">
