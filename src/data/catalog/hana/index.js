@@ -27,5 +27,7 @@ export default {
     lineDrawing
   ],
   url: "/catalog/hana/",
-  rotationClass: "rotate-mirror"
+  rotationClass: "rotate-mirror",
+  dimensions: ["6x6", "8x8"],
+  priceGroup: 2
 };

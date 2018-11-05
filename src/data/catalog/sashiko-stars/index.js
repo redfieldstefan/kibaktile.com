@@ -19,5 +19,7 @@ export default {
     fourPiece,
     lineDrawing
   ],
-  url: "/catalog/sashiko-stars/"
+  url: "/catalog/sashiko-stars/",
+  dimensions: ["6x6", "8x8"],
+  priceGroup: 3
 };

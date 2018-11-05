@@ -21,5 +21,7 @@ export default {
     lineDrawing
   ],
   url: "/catalog/rhiad/",
-  rotationClass: "rotate-right"
+  rotationClass: "rotate-right",
+  dimensions: ["6x6", "8x8"],
+  priceGroup: 3
 };

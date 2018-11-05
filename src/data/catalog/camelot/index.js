@@ -20,12 +20,14 @@ export default {
   fourPiece,
   slides: [
     GRIHConfig,
-    fourPiece,
     timelessCamelot,
     cWFourConfig,
     camelotBacksplash,
+    fourPiece,
     lineDrawing
   ],
   url: "/catalog/camelot/",
-  rotationClass: "rotate-right"
+  rotationClass: "rotate-right",
+  dimensions: ["6x6", "8x8"],
+  priceGroup: 1
 };

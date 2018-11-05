@@ -20,5 +20,7 @@ export default {
     fourPiece,
     lineDrawing
   ],
-  url: "/catalog/kabuki-drop/"
+  url: "/catalog/kabuki-drop/",
+  dimensions: ["6x6", "8x8"],
+  priceGroup: 1
 };

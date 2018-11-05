@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Price from "./price";
+import {calculateCost} from "../helpers/price-groups";
 
 class PatternOption extends Component {
 
@@ -13,12 +15,23 @@ class PatternOption extends Component {
   }
 
   render() {
+    const { pattern } = this.props;
+
     return (
-      <a href={this.props.pattern.url} className="PatternOption" onClick={this.selectPattern}>
-        <img className="pattern-option-line-drawing" src={this.props.pattern.painted || this.props.pattern.lineDrawing} />
-        <span className="pattern-option-name">
-          {this.props.pattern.name}
-        </span>
+      <a href={pattern.url} className="PatternOption" onClick={this.selectPattern}>
+        <img className="pattern-option-line-drawing" src={pattern.painted || pattern.lineDrawing} />
+        <div className="pattern-option-details">
+          <span className="pattern-option-name">
+            {pattern.name}
+          </span>
+          <div className="pattern-price-container">
+            {
+              pattern.dimensions &&
+              pattern.priceGroup &&
+              pattern.dimensions.map((dimension) => <Price key={`${pattern.name}-${dimension}`} cost={calculateCost(pattern.priceGroup, dimension)} dimension={dimension} />)
+            }
+          </div>
+        </div>
       </a>
     );
   }
