@@ -3,9 +3,4 @@
 	display: flex;
 	flex-direction: row;
 	font-size: 14px;
-	justify-content: center;
-
-	@media(min-width: $width-tablet) {
-		justify-content: left;
-	}
 }
