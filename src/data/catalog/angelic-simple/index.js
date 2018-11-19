@@ -18,9 +18,9 @@ export default {
   slides: [
     whiteGreyConfig,
     whiteConfig,
-    fourPiece,
     yelBlueGreenConfig,
     yellowWhiteConfig,
+    fourPiece,
     lineDrawing
   ],
   url: "/catalog/angelic-simple/",

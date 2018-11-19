@@ -1,0 +1,14 @@
+.TextInput {
+  width: 100%;
+  height: 40px;
+  padding-left: 10px;
+  font-size: 1em;
+  border: 0;
+  border-bottom: 2px solid $color-slate-grey;
+  margin-bottom: 10px;
+
+  &:focus {
+  	border-bottom: 2px solid $color-mint;
+  	outline: none;
+  };
+}

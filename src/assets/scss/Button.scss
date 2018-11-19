@@ -1,0 +1,22 @@
+.Button {
+  border: none;
+  background-color: $color-link;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  outline: none;
+  padding: 10px;
+  -webkit-transition-property: background-color;
+  -webkit-transition-duration: .25s;
+	transition-property: background-color;
+  transition-duration: .25s;
+
+  &:hover {
+  	cursor: pointer;
+  	background-color: $color-mint;
+  };
+
+  &:focus {
+  	background-color: $color-mint;
+  };
+}

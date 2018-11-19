@@ -1,0 +1,10 @@
+.Form {
+	.Button {
+	  margin-top: 20px;
+	  width: 100%;
+
+	  @media(min-width: $width-tablet) {
+	    width: 200px;
+	  }
+	}
+}

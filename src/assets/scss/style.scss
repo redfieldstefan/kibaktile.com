@@ -19,6 +19,11 @@
 @import "./contact.scss";
 @import "./footer.scss";
 @import "./price.scss";
+@import "./modal.scss";
+@import "./TextInput.scss";
+@import "./TextArea.scss";
+@import "./Button.scss";
+@import "./Form.scss";
 
 
 * {
@@ -50,14 +55,20 @@ img {
   display: block;
 }
 
-a {
+a, .fake-link {
   text-decoration: none;
   color: $color-link;
 
   &:hover {
     text-decoration: underline;
+    cursor: pointer;
   };
 
+}
+
+button {
+  border: none;
+  background-color: transparent;
 }
 
 .btn {
