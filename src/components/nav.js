@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 
-const Nav = ({toggleContactModal}) => (
+const Nav = () => (
   <div className="header">
     <Link className="headline-link" to="/">
       <h1 className="headline">Kibak Tile</h1>
