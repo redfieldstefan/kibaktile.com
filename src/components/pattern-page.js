@@ -5,6 +5,10 @@ import Helmet from 'react-helmet';
 import NextPrevPattern from "./next-prev-pattern";
 import catalog from "../data/catalog";
 import Price from "./price";
+import Modal from "./Modal";
+import TextInput from "./TextInput";
+import TextArea from "./TextArea";
+import Form from "./Form";
 import {calculateCost} from "../helpers/price-groups";
 
 const defaultDescription = `Infuse your space with beautiful pattern and color using decorative
@@ -18,13 +22,28 @@ const defaultDescription = `Infuse your space with beautiful pattern and color u
 
 class PatternPage extends Component {
 
-  constructor(props) {
-    super(props);
+  state = {
+    pattern: this.props.pattern,
+    modalOpen: false,
+    contact: {
+      name: "",
+      email: "",
+      address: "",
+      state: "",
+      zip: "",
+      phone: "",
+      comment: ""
+    }
+  }
 
-    this.state = {
-      pattern: props.pattern
-    };
-  };
+  handleChange = (e) => {
+    e.preventDefault();
+
+    const {name, value} = e.target;
+    this.setState({
+      [name]: value
+    });
+  }
 
   renderCarousel(slides) {
     return (
@@ -39,11 +58,50 @@ class PatternPage extends Component {
       </Carousel>
     )
   }
+  
+  renderContact() {
+    return(
+      <div className="pattern-contact">
+        <Form>
+          <TextInput placeholder="Name" className="pattern-contact-name" name="name" value={this.state.name} onChange={this.handleChange} />
+          <TextInput placeholder="Email" className="pattern-contact-email" name="email" value={this.state.email} onChange={this.handleChange}/>
+          <TextInput placeholder="Address" name="address" value={this.state.address} onChange={this.handleChange}/>
+          <TextInput placeholder="State" className="pattern-contact-state" name="state" value={this.state.state} onChange={this.handleChange}/>
+          <TextInput placeholder="Zip" className="pattern-contact-zip" name="zip" value={this.state.zip} onChange={this.handleChange}/>
+          <TextInput type="tel" placeholder="Phone" className="pattern-contact-phone" name="phone" value={this.state.phone} onChange={this.handleChange}/>
+          <div className="pattern-contact-select">
+            <label for="pattern-select">I'd like to know more about</label>
+            <select id="pattern-select" name="pattern">
+              <option value="">Select a pattern</option>
+              {catalog.map(pattern => {
+                console.log("pattern!", pattern)
+                return (<option key={pattern.name} value={pattern.name} selected={pattern === this.props.pattern}>{pattern.name}</option>)
+              })}
+            </select>
+          </div>
+          <TextArea placeholder="Message" className="pattern-contact-body" name="comment" value={this.state.comment} onChange={this.handleChange} />
+        </Form>
+      </div>
+    );
+  }
+
+  toggleContactModal = () => {
+    this.setState({
+      modalOpen: !this.state.modalOpen
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalOpen: false
+    })
+  }
+
 
   render() {
     const { pattern } = this.state;
     const patternIndex = catalog.indexOf(pattern);
-    const lastIndex = catalog.length - 1
+    const lastIndex = catalog.length - 1;
     const prevPattern = patternIndex === 0 ? catalog[lastIndex] : catalog[patternIndex - 1];
     const nextPattern = patternIndex === lastIndex ? catalog[0] : catalog[patternIndex + 1];
     const baseUrl = `http://www.kibaktile.com${pattern.url}`;
@@ -111,6 +169,13 @@ class PatternPage extends Component {
                   Twitter
                 </a>
               </div>
+              <div className="pattern-get-started">
+                Want to order or have a question?&nbsp;
+                <button className='fake-link' onClick={this.toggleContactModal}>Lets get started!</button>
+              </div>
+              <Modal isOpen={this.state.modalOpen} handleClose={this.toggleContactModal} onRequestClose={this.closeModal}>
+                {this.renderContact()}
+              </Modal>
             </span>
           </div>
           <div className="next-prev-arrows">

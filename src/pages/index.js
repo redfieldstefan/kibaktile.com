@@ -1,7 +1,5 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import BasePage from '../components/base-page';
-import Carousel from "../components/carousel";
-import Helmet from 'react-helmet';
 import PatternBar from "../components/pattern-bar";
 import Contact from "../components/contact";
 import catalog from "../data/catalog";

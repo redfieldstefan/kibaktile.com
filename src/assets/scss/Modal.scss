@@ -1,0 +1,43 @@
+.Modal {
+	padding: 30px 20px 20px 20px;
+	background-color: white;
+	border: 1px solid $color-light-gray;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.25);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.25);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.25);
+
+  .modal-close {
+    border: none;
+    background-color: transparent;
+    float: right;
+    margin: 40px 0 0 0;
+
+    @media(min-width: $width-tablet) {
+      margin: -15px 0 0 0;
+    }
+
+    &:hover {
+      cursor: pointer;
+    };
+    
+    img {
+      width: 15px;
+    }
+  }
+
+  .TextArea {
+    height: 200px;
+  }
+}
+
+.Overlay {
+	position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+}
