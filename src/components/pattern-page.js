@@ -74,7 +74,6 @@ class PatternPage extends Component {
             <select id="pattern-select" name="pattern">
               <option value="">Select a pattern</option>
               {catalog.map(pattern => {
-                console.log("pattern!", pattern)
                 return (<option key={pattern.name} value={pattern.name} selected={pattern === this.props.pattern}>{pattern.name}</option>)
               })}
             </select>
