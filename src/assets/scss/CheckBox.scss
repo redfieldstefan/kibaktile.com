@@ -1,0 +1,9 @@
+.CheckBox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	label {
+		margin-left: 10px;
+	}
+}

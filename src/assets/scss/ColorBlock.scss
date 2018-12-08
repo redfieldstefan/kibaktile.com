@@ -1,0 +1,13 @@
+.ColorBlock {
+	padding: 40px;
+}
+
+.color-block-swatches {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+
+	.Color {
+		flex: 0 0 calc(100%/6);
+	}
+}
