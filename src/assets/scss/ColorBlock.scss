@@ -1,5 +1,9 @@
 .ColorBlock {
-	padding: 40px;
+	padding: 20px;
+
+  @media(min-width: $width-tablet) {
+    padding: 0 40px 40px 40px;
+  };
 }
 
 .color-block-swatches {
@@ -8,6 +12,15 @@
 	flex-wrap: wrap;
 
 	.Color {
-		flex: 0 0 calc(100%/6);
+		flex: 0 0 50%;
+
+	  @media(min-width: $width-tablet) {
+	    flex: 0 0 25%;
+	  };
+
+  	@media(min-width: $width-laptop) {
+			flex: 0 0 20%;
+	  };
+
 	}
 }

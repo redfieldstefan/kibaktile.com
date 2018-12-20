@@ -3,6 +3,7 @@ import colors from "../data/colors";
 import BasePage from '../components/base-page';
 import ColorBlock from "../components/ColorBlock";
 import CheckBox from "../components/CheckBox";
+import classnames from "classnames";
 import { partition } from "lodash";
 
 const colorFilters = () => {
@@ -14,7 +15,7 @@ const colorFilters = () => {
 		}
 	}));
 
-	const sheens = ["matte", "gloss", "satin"];
+	const sheens = ["matte", "gloss", "satin", "metallic"];
 
 	const filters = partition(possibleFilters, filter => sheens.includes(filter));
 
@@ -31,7 +32,8 @@ class Colors extends Component {
 	state = {
 		filters: [],
 		colorFilters: colorFilters().colors,
-		sheenFilters: colorFilters().sheens
+		sheenFilters: colorFilters().sheens,
+		filtersOpen: false
 	}
 
 	handleFilter = (e) => {
@@ -64,6 +66,12 @@ class Colors extends Component {
 		return colors;
 	}
 
+	toggleFilter = () => {
+		this.setState({
+			filtersOpen: !this.state.filtersOpen
+		})
+	}
+
 	render() {
 		const filteredColors = this.filterColors();
 		const blues = filteredColors.filter(color => color.filters.includes("blue") || color.filters.includes("green"));
@@ -72,20 +80,26 @@ class Colors extends Component {
 		return (
 			<BasePage title="Browse our color options | Kibak Tile">
 				<div className="Colors">
-					<div className="colors-filter">
-						<h5 className="filter-headline">Filters</h5>
-						<h5 className="filter-type-headline">Colors</h5>
-						{
-							this.state.colorFilters.map(filter => <CheckBox className={`checkbox-${filter}`} key={filter} label={`${filter}s`} value={filter} id={filter} onChange={this.handleFilter} />)
-						}
-						<h5 className="filter-type-headline">Finish</h5>
-						{
-							this.state.sheenFilters.map(filter => <CheckBox key={filter} label={filter} value={filter} id={filter} onChange={this.handleFilter} />)
-						}
+					<div className={classnames("colors-filter", {open: this.state.filtersOpen})}>
+						<p className={classnames("close-filters fake-link")} onClick={this.toggleFilter}>Close</p>
+						<p className={classnames("open-filters fake-link", {open: this.state.filtersOpen})} onClick={this.toggleFilter}>Filters</p>
+						<h5 className="filter-headline headline">Filters</h5>
+						<div className="filters-block">
+							<h5 className="filter-type-headline">Colors</h5>
+							{
+								this.state.colorFilters.map(filter => <CheckBox className={`checkbox-${filter}`} key={filter} label={`${filter}s`} value={filter} id={filter} onChange={this.handleFilter} />)
+							}
+						</div>
+						<div className="filters-block">
+							<h5 className="filter-type-headline">Finish</h5>
+							{
+								this.state.sheenFilters.map(filter => <CheckBox key={filter} label={filter} value={filter} id={filter} onChange={this.handleFilter} />)
+							}
+						</div>
 					</div>
 					<div className="colors-swatches">
 						<div className="colors-headline">
-							<h1>Color Options</h1>
+							<h1 className="headline">Color Options</h1>
 							<p>Beautiful design elevated with colors to fit your installation perfectly. Browse our options and contact us to request samples.</p>
 						</div>
 						<ColorBlock colors={filteredColors} />

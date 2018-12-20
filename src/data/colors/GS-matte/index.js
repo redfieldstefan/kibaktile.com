@@ -3,5 +3,5 @@ import swatch from './GS-matte.png';
 export default {
 name: 'GS-matte',
 swatch,
-filters: ['neutral']
+filters: ['neutral', 'white', 'matte']
 };
