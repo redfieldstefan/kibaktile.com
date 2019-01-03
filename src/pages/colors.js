@@ -25,7 +25,7 @@ const colorFilters = () => {
 		sheens: filters[0],
 		colors: filters[1]
 	};
-} 
+}
 
 class Colors extends Component {
 
@@ -41,7 +41,7 @@ class Colors extends Component {
 
 		if(value) {
 			let filters = this.state.filters.map(filter => filter);
-			
+
 			const index = filters.indexOf(value);
 			if(index >= 0) {
 				filters.splice(index, 1);
@@ -56,7 +56,7 @@ class Colors extends Component {
 	}
 
 	filterColors = () => {
-		if(this.state.filters.length) {		
+		if(this.state.filters.length) {
 			return colors.filter(color => {
 				const matchedFilters = color.filters.filter(filter => this.state.filters.includes(filter));
 				return matchedFilters.length;
@@ -86,15 +86,19 @@ class Colors extends Component {
 						<h5 className="filter-headline headline">Filters</h5>
 						<div className="filters-block">
 							<h5 className="filter-type-headline">Colors</h5>
-							{
-								this.state.colorFilters.map(filter => <CheckBox className={`checkbox-${filter}`} key={filter} label={`${filter}s`} value={filter} id={filter} onChange={this.handleFilter} />)
-							}
+							<div className="filters-radio-group">
+								{
+									this.state.colorFilters.map(filter => <CheckBox className={`checkbox-${filter}`} key={filter} label={`${filter}s`} value={filter} id={filter} onChange={this.handleFilter} />)
+								}
+							</div>
 						</div>
 						<div className="filters-block">
 							<h5 className="filter-type-headline">Finish</h5>
-							{
-								this.state.sheenFilters.map(filter => <CheckBox key={filter} label={filter} value={filter} id={filter} onChange={this.handleFilter} />)
-							}
+							<div className="filters-radio-group">
+								{
+									this.state.sheenFilters.map(filter => <CheckBox key={filter} label={filter} value={filter} id={filter} onChange={this.handleFilter} />)
+								}
+							</div>
 						</div>
 					</div>
 					<div className="colors-swatches">

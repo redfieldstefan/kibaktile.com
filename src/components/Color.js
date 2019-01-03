@@ -1,13 +1,23 @@
-import React from "react";
+import React, { Component } from "react";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import classnames from "classnames";
 
-const Color = ({color}) => (
-	<div class="Color">
-		<img alt={color.name} src={color.swatch}/>
-		<div class="color-text">
-			<p>{color.name}</p>
-			<button>Share</button>
-		</div>
-	</div>
-);
+class Color extends Component {
+
+  static defaultProps = {
+    name: ""
+  }
+
+  render() {
+    const { color } = this.props;
+
+    return (
+      <div className="Color" id={color.name}>
+        <img alt={color.name} src={color.swatch}/>
+        <p className="color-name">{color.name}</p>
+      </div>
+    );
+  }
+};
 
 export default Color;
