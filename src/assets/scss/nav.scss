@@ -47,12 +47,11 @@
 
 .header-link {
   letter-spacing: .1em;
-  padding: 1em .5em 1em 0;
+  padding: 1em 1em 1em 0;
   text-transform: uppercase;
   font-size: .65em;
 
   @media(min-width: $width-small-mobile) {
-    padding: 1em 1em 1em 0;
     font-size: .75em;
   }
 
