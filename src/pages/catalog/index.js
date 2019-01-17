@@ -1,7 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import BasePage from "../../components/base-page";
 import PatternOption from "../../components/pattern-option";
-import downloadIcon from "../../assets/images/icons/download.png";
 import catalog from "../../data/catalog";
 
 const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2018+Kibak+Tile+catalog.pdf";

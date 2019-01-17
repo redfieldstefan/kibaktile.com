@@ -1,5 +1,4 @@
 .Footer {
-  width: 100%;
   background-color: $color-black;
   color: white;
   display: flex;
@@ -7,6 +6,7 @@
   padding: 30px;
   justify-content: flex-end;
   text-align: center;
+  width: 100%;
 
 	@media(min-width: $width-tablet) {
   	flex-direction: row;
