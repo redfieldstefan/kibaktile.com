@@ -8,6 +8,7 @@ const Nav = () => (
     </Link>
     <span className="header-links">
       <a className="header-link" href="/catalog/">Catalog</a>
+      <a className="header-link" href="/colors/">Colors</a>
       <a className="header-link" href="/catalog/sakura-cherry-tree/">Sakura</a>
       <a className="header-link" href="/about/">About Us</a>
       <a className="header-link" href="/#contact">Contact</a>

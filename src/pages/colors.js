@@ -104,7 +104,7 @@ class Colors extends Component {
 					<div className="colors-swatches">
 						<div className="colors-headline">
 							<h1 className="headline">Color Options</h1>
-							<p>Beautiful design elevated with colors to fit your installation perfectly. Browse our options and contact us to request samples.</p>
+							<p>Beautiful design elevated with colors to fit your installation perfectly. Browse our options and <a href="/#contact">contact us</a> to request samples.</p>
 						</div>
 						<ColorBlock colors={filteredColors} />
 					</div>
