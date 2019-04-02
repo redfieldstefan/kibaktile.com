@@ -47,9 +47,10 @@
 
 .header-link {
   letter-spacing: .1em;
-  padding: 1em 1em 1em 0;
+  padding: 1em 10px 1em 0;
   text-transform: uppercase;
-  font-size: .65em;
+  text-decoration: underline;
+  font-size: .6em;
 
   @media(min-width: $width-small-mobile) {
     font-size: .75em;
