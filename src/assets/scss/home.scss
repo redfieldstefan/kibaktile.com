@@ -28,68 +28,6 @@
   }
 }
 
-.home-bios {
-  padding: 2em 0;
-
-  @media(min-width: $width-xlarge) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-}
-
-.home-bio {
-  padding: $padding-content-mobile;
-  display: flex;
-  flex-flow: column;
-  padding-bottom: 3em;
-
-  @media(min-width: $width-tablet) {
-    padding: 2em $padding-content;
-    flex-flow: row;
-  }
-}
-
-.home-bio-img-container {
-  display: block;
-  height: auto;
-  padding-bottom: 2em;
-
-
-  @media (min-width: $width-tablet) {
-    padding: 0;
-  }
-}
-
-.home-bio-img {
-  width: 100%;
-
-  @media (min-width: $width-tablet) {
-    width: 220px;
-  }
-}
-
-.home-bio-p {
-  width: 100%;
-  text-align: left;
-  font-size: 1em;
-  font-weight: 300;
-  line-height: 1.5;
-
-  @media (min-width: $width-tablet) {
-    padding: 0 0 0 2em;
-    text-align: justify;
-    width: 70%;
-  }
-
-  @media (min-width: $width-laptop) {
-    padding: 0 3em 0 5em;
-    font-size: 1.15em;
-    margin-bottom: 1.5em;
-    width: 75%;
-  }
-}
-
 .core-list {
   width: 100%;
   text-align: center;
