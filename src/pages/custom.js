@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import FakeLink from '../components/fake-link';
 import BasePage from "../components/base-page";
-import Modal from "../components/modal";
 import Contact from "../components/contact";
 
 const Progression = styled.div`
@@ -123,9 +122,6 @@ const Custom = () => {
           <li>Together we will create an exceptional tile mural for your space</li>
 				</Process>
 			</Body>
-			<Modal isOpen={showModal} handleClose={() => setShowModal(false)} onRequestClose={() => setShowModal(false)}>
-				<Contact />
-			</Modal>
 		</BasePage>
 	);
 };
