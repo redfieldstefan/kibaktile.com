@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prod": "build && start"
+    "prod": "next build && next start"
   },
   "dependencies": {
     "classnames": "^2.2.6",

@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import styled from 'styled-components';
 import Nav from "./nav";
 import Breadcrumbs from './breadcrumbs';
-import Footer from "./Footer";
+import Footer from "./footer";
 
 const Container = styled.div`
   width: 100%;
