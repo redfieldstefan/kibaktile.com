@@ -1,5 +1,5 @@
 import React from "react";
-import Gammon from "../../data/catalog/gammon";
+import Gammon from "../../utils/catalog/gammon";
 import PatternPage from "../../components/pattern-page";
 
 const GammonPage = () => (

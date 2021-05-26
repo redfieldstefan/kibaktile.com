@@ -1,15 +1,17 @@
-import React, { Component } from "react";
-import BasePage from "./base-page";
+import React, { useState } from "react";
 import { Carousel } from 'react-responsive-carousel';
 import Helmet from 'react-helmet';
+import styled from 'styled-components'
+import BasePage from "./base-page";
 import NextPrevPattern from "./next-prev-pattern";
-import catalog from "../data/catalog";
+import catalog from "../utils/catalog";
 import Price from "./price";
-import Modal from "./Modal";
-import TextInput from "./TextInput";
-import TextArea from "./TextArea";
-import Form from "./Form";
-import {calculateCost} from "../helpers/price-groups";
+import Modal from "./modal";
+import Breadcrumbs from "./breadcrumbs";
+import FakeLink from './fake-link';
+import Contact from "./contact";
+import NavigatePatterns from './navigate-patterns';
+import { calculateCost } from "../utils/price-groups";
 
 const defaultDescription = `Infuse your space with beautiful pattern and color using decorative
   ceramic tile. There are many different ways to feature decorative tile in any project. Use
@@ -20,171 +22,188 @@ const defaultDescription = `Infuse your space with beautiful pattern and color u
   product. Suitable for interior wall, countertop and low-traffic floors. Exterior use in
   non-freezing climates only. Tile dimensions are 6" x 6" and 8" x 8".`;
 
-class PatternPage extends Component {
+const CarouselContainer = styled.div`
+  width: 100%;
+  float: left;
+  padding: ${props => props.theme.padding.mobile};
 
-  state = {
-    pattern: this.props.pattern,
-    modalOpen: false,
-    contact: {
-      name: "",
-      email: "",
-      address: "",
-      state: "",
-      zip: "",
-      phone: "",
-      comment: ""
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    padding: ${props => props.theme.padding.default};
+    width: 50%;
+  }
+
+  .carousel .slide img {
+    vertical-align: center;
+    border: 0;
+    width: 50%;
+  }
+
+  .carousel-img-container {
+    width: 100%;
+
+    @media(min-width: $width-tablet) {
+      width: 600px;
     }
   }
+`;
 
-  handleChange = (e) => {
-    e.preventDefault();
+const Name = styled.h1`
+  letter-spacing: .025em;
+  font-weight: 300;
+  line-height: 1;
+  color: ${props => props.theme.colors.black};
+  border-bottom: 2px solid black;
+  padding: 10px 0;
 
-    const {name, value} = e.target;
-    this.setState({
-      [name]: value
-    });
+  @media(min-width: ${props => props.theme.breakpoints.laptop}) {
+    font-size: 2.5em;
+    padding: 0 0 10px 0;
   }
+`;
 
-  renderCarousel(slides) {
-    return (
-      <Carousel emulateTouch showStatus={false} infiniteLoop useKeyboardArrows>
-        { slides.map((image) => {
-          return (
-            <div className="carousel-img-container">
-              <img src={image} />
-            </div>
-          );
-        })}
-      </Carousel>
-    )
+const Body = styled.div`
+  float: left;
+  display: flex;
+  flex-direction: column;
+  font-weight: 300;
+  line-height: 1.5;
+  padding: 0 20px;
+  width: 100%;
+
+  @media(min-width:  ${props => props.theme.breakpoints.laptop}) {
+    padding: 40px;
+    width: 40%;
   }
-  
-  renderContact() {
-    return(
-      <div className="pattern-contact">
-        <Form>
-          <TextInput placeholder="Name" className="pattern-contact-name" name="name" value={this.state.name} onChange={this.handleChange} />
-          <TextInput placeholder="Email" className="pattern-contact-email" name="email" value={this.state.email} onChange={this.handleChange}/>
-          <TextInput placeholder="Address" name="address" value={this.state.address} onChange={this.handleChange}/>
-          <TextInput placeholder="State" className="pattern-contact-state" name="state" value={this.state.state} onChange={this.handleChange}/>
-          <TextInput placeholder="Zip" className="pattern-contact-zip" name="zip" value={this.state.zip} onChange={this.handleChange}/>
-          <TextInput type="tel" placeholder="Phone" className="pattern-contact-phone" name="phone" value={this.state.phone} onChange={this.handleChange}/>
-          <div className="pattern-contact-select">
-            <label for="pattern-select">I'd like to know more about</label>
-            <select id="pattern-select" name="pattern">
-              <option value="">Select a pattern</option>
-              {catalog.map(pattern => {
-                return (<option key={pattern.name} value={pattern.name} selected={pattern === this.props.pattern}>{pattern.name}</option>)
-              })}
-            </select>
-          </div>
-          <TextArea placeholder="Message" className="pattern-contact-body" name="comment" value={this.state.comment} onChange={this.handleChange} />
-        </Form>
-      </div>
-    );
+`;
+
+const Description = styled.div`
+  font-size: 1.15em;
+  padding: 20px 0 0;
+
+  @media(min-width:  ${props => props.theme.breakpoints.laptop}) {
+    text-align: justify;
+    max-width: 1000px;
+    line-height: 1.5;
+    font-weight: 300;
+    align-self: center;
   }
+`;
 
-  toggleContactModal = () => {
-    this.setState({
-      modalOpen: !this.state.modalOpen
-    });
-  };
+const PriceContainer = styled.span`
+display: block;
+  padding-top: 20px;
+`;
 
-  closeModal = () => {
-    this.setState({
-      modalOpen: false
-    })
-  }
+const Share = styled.div`
+  margin-top: 20px;
+`;
+
+const ShareLink = styled.a`
+  padding-left: 7px;
+`;
+
+const GetStarted = styled.div`
+  padding-top: 20px;
+  font-weight: 400;
+`;
+
+const StyledFakeLink = styled(FakeLink)`
+  font-size: inherit;
+  text-decoration: underline;
+  padding: 0;
+`;
 
 
-  render() {
-    const { pattern } = this.state;
-    const patternIndex = catalog.indexOf(pattern);
-    const lastIndex = catalog.length - 1;
-    const prevPattern = patternIndex === 0 ? catalog[lastIndex] : catalog[patternIndex - 1];
-    const nextPattern = patternIndex === lastIndex ? catalog[0] : catalog[patternIndex + 1];
-    const baseUrl = `http://www.kibaktile.com${pattern.url}`;
+const PatternPage = ({pattern}) => {
+  const [showModal, setShowModal] = useState(false);
+  const patternIndex = catalog.indexOf(pattern);
+  const lastIndex = catalog.length - 1;
+  const prevPattern = patternIndex === 0 ? catalog[lastIndex] : catalog[patternIndex - 1];
+  const nextPattern = patternIndex === lastIndex ? catalog[0] : catalog[patternIndex + 1];
+  const baseUrl = `http://www.kibaktile.com${pattern.url}`;
 
-    return(
-      <BasePage
-        title={`${pattern.name} | Kibak Tile`}
-        description={pattern.description}
+  return(
+    <BasePage
+      title={`${pattern.name} | Kibak Tile`}
+      description={pattern.description}
+      breadcrumbs={[{href: '/catalog', label: 'Catalog'}, {href: pattern.url, label: pattern.name}]}
+    >
+      <Helmet
+        meta={[
+          { property: "og:image", content: pattern.painted },
+          { name: "twitter:card", content: "summary"},
+          { name: "twitter:title", content: pattern.name },
+          { name: "twitter:description", content: pattern.description },
+          { name: "twitter:url", content: baseUrl },
+          { name: "twitter:image", content: pattern.painted }
+        ]}
       >
-        <Helmet
-          meta={[
-            { property: "og:image", content: pattern.painted },
-            { name: "twitter:card", content: "summary"},
-            { name: "twitter:title", content: pattern.name },
-            { name: "twitter:description", content: pattern.description },
-            { name: "twitter:url", content: baseUrl },
-            { name: "twitter:image", content: pattern.painted }
-          ]}
-        >
-          <link rel="icon" type="image/png" href={`${pattern.painted}?t=${Date.now()}`} sizes="16x16" />
-        </Helmet>
-        <div className="PatternPage">
-          <div className="pattern-breadcrumb">
-            <a href="/catalog/">Catalog</a>
-            <span className="divider">/</span>
-            <a href={pattern.url}>{pattern.name}</a>
-          </div>
-          <div className="pattern-carousel">
-            {this.renderCarousel(pattern.slides)}
-          </div>
-          <div className="pattern-text">
-            <span className="pattern-title-container">
-              <h1 className="pattern-title">{pattern.name}</h1>
-            </span>
-            <span className="pattern-description">
-              <p>
-                {
-                  pattern.description ? pattern.description :
-                  defaultDescription
-                }
-              </p>
-              <p>
-                Suitable for interior wall, countertop and low-traffic floors. Exterior use in
-                non-freezing climates only. Tile dimensions are 6" x 6" and 8" x 8".
-              </p>
-              {
-                pattern.dimensions && pattern.dimensions.map(dimension => (
-                  <Price key={`${pattern.name}-${dimension}`} cost={calculateCost(pattern.priceGroup, dimension)} dimension={dimension} />)
-                ) 
-              }
-              <div className="pattern-share-conatiner">
-                <span className="pattern-share-label">Share on</span>
-                <a
-                  className="pattern-share-link"
-                  target="_blank"
-                  href={`http://www.facebook.com/share.php?u=${baseUrl}`}
-                >
-                  Facebook
-                </a>
-                <a
-                  className="pattern-share-link"
-                  target="_blank"
-                  href={`http://twitter.com/intent/tweet?text=${pattern.name}+${baseUrl}`}
-                >
-                  Twitter
-                </a>
-              </div>
-              <div className="pattern-get-started">
-                Want to order or have a question?&nbsp;
-                <button className='fake-link' onClick={this.toggleContactModal}>Lets get started!</button>
-              </div>
-              <Modal isOpen={this.state.modalOpen} handleClose={this.toggleContactModal} onRequestClose={this.closeModal}>
-                {this.renderContact()}
-              </Modal>
-            </span>
-          </div>
-          <div className="next-prev-arrows">
-            <NextPrevPattern direction="previous" pattern={prevPattern} />
-            <NextPrevPattern direction="next"  pattern={nextPattern} />
-          </div>
-        </div>
-      </BasePage>
-    );
-  }
+        <link rel="icon" type="image/png" href={`${pattern.painted}?t=${Date.now()}`} sizes="16x16" />
+      </Helmet>     
+      
+      {
+        pattern.slides && (
+          <CarouselContainer>
+            <Carousel emulateTouch showStatus={false} infiniteLoop useKeyboardArrows>
+              { pattern.slides.map((image) => {
+                return (
+                  <div className="carousel-img-container">
+                    <img src={image} />
+                  </div>
+                );
+              })}
+            </Carousel>
+          </CarouselContainer>
+        )
+      }
+
+      <Body>
+        <Name>{pattern.name}</Name>
+        <Description>
+          <p>
+            {
+              pattern.description ? pattern.description :
+              defaultDescription
+            }
+          </p>
+          <p>
+            Suitable for interior wall, countertop and low-traffic floors. Exterior use in
+            non-freezing climates only. Tile dimensions are 6" x 6" and 8" x 8".
+          </p>
+          <PriceContainer>
+            {
+              pattern.dimensions && pattern.dimensions.map(dimension => (
+                <Price key={`${pattern.name}-${dimension}`} cost={calculateCost(pattern.priceGroup, dimension)} dimension={dimension} />)
+              ) 
+            }
+          </PriceContainer>
+          <Share>
+            Share on
+            <ShareLink
+              target="_blank"
+              href={`http://www.facebook.com/share.php?u=${baseUrl}`}
+            >
+              Facebook
+            </ShareLink>
+            <ShareLink
+              target="_blank"
+              href={`http://twitter.com/intent/tweet?text=${pattern.name}+${baseUrl}`}
+            >
+              Twitter
+            </ShareLink>
+          </Share>
+          <GetStarted>
+            Want to order or have a question?&nbsp;
+            <StyledFakeLink onClick={() => setShowModal(true)}>Get started</StyledFakeLink>
+          </GetStarted>
+          <Modal isOpen={showModal} handleClose={() => setShowModal(false)} onRequestClose={() => setShowModal(false)}>
+            <Contact />
+          </Modal>
+        </Description>
+      </Body>
+      <NavigatePatterns next={nextPattern} previous={prevPattern} />
+    </BasePage>
+  );
 }
 
 export default PatternPage;

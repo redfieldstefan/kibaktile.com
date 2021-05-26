@@ -1,23 +1,30 @@
-import React, { Component } from "react";
-import { CopyToClipboard } from 'react-copy-to-clipboard';
-import classnames from "classnames";
+import React from "react";
+import styled from "styled-components";
 
-class Color extends Component {
+const StyledContainer = styled.div`
+  text-align: center;
+  padding: 20px 10px;
 
-  static defaultProps = {
-    name: ""
-  }
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    padding: 20px;
+  };
+`;
 
-  render() {
-    const { color } = this.props;
+const StyledImage = styled.img`
+  width: 100%;
+`;
 
-    return (
-      <div className="Color" id={color.name}>
-        <img alt={color.name} src={color.swatch}/>
-        <p className="color-name">{color.name}</p>
-      </div>
-    );
-  }
+const StyledName = styled.p`
+  margin-top: 10px;
+`;
+
+const Color = ({color = "", className}) => {
+  return (
+    <StyledContainer id={color.name} className={className}>
+      <StyledImage alt={color.name} src={color.swatch}/>
+      <StyledName>{color.name}</StyledName>
+    </StyledContainer>
+  );
 };
 
 export default Color;

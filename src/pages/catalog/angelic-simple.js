@@ -1,5 +1,5 @@
 import React from "react";
-import AngelicSimple from "../../data/catalog/angelic-simple";
+import AngelicSimple from "../../utils/catalog/angelic-simple";
 import PatternPage from "../../components/pattern-page";
 
 const AngelicSimplePage = () => (

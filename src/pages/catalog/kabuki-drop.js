@@ -1,5 +1,5 @@
 import React from "react";
-import KabukiDrop from "../../data/catalog/kabuki-drop";
+import KabukiDrop from "../../utils/catalog/kabuki-drop";
 import PatternPage from "../../components/pattern-page";
 
 const KabukiDropPage = () => (

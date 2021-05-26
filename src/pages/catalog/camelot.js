@@ -1,5 +1,5 @@
 import React from "react";
-import Camelot from "../../data/catalog/camelot";
+import Camelot from "../../utils/catalog/camelot";
 import PatternPage from "../../components/pattern-page";
 
 const CamelotPage = () => (

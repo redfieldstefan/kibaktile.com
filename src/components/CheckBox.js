@@ -1,11 +1,21 @@
 import React from "react";
-import classnames from "classnames";
+import styled from 'styled-components';
+
+const StyledContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	label {
+		margin-left: 10px;
+	}
+`;
 
 const CheckBox = ({id, name, onChange, label, value, className}) => (
-	<div className={classnames("CheckBox", className)}>
+	<StyledContainer className={className}>
 		<input id={id} type="checkbox" name={name} onChange={onChange} value={value}/>
 		<label for={id}>{label}</label>
-	</div>
+	</StyledContainer>
 );
 
 export default CheckBox;

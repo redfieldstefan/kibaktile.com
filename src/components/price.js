@@ -1,7 +1,15 @@
 import React from "react";
+import styled from 'styled-components';
 
-const Price = ({dimension, cost, placeholder}) => (
-	<div className="price-container">
+const Container = styled.div`
+	color: $color-black;
+	display: flex;
+	flex-direction: row;
+	font-size: 1em;
+`;
+
+const Price = ({dimension, cost, placeholder, ...rest}) => (
+	<Container {...rest}>
 		{
 			placeholder
 				? <p className="price-placeholder">{placeholder}</p>
@@ -10,7 +18,7 @@ const Price = ({dimension, cost, placeholder}) => (
 						{cost && <p className="price-cost">&nbsp;${cost} sq ft</p>}
 					</React.Fragment>
 		}
-	</div>
+	</Container>
 );
 
 export default Price;

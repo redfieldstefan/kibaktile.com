@@ -1,10 +1,21 @@
 import React from "react";
-import classnames from "classnames";
+import styled from 'styled-components';
 
-const Button = ({className, onClick, type, children, value}) => (
-	<button className={classnames("Button", className)} onClick={onClick} type={type || "submit"} value={value || "Send"}>
-		{children}
-	</button>
-);
+const StyleButton = styled.button`
+	padding: 10px 40px;
+	background: ${props => props.theme.colors.black};
+	text-transform: uppercase;
+	color: white;
+	border: 0;
+	outline: 0;
+`;
+
+const Button = ({children, ...rest}) => {
+	return (
+		<StyleButton {...rest}>
+			{children}
+		</StyleButton>
+	);
+};
 
 export default Button;
