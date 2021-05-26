@@ -11,8 +11,8 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "next": "9.5.3",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
     "react-modal": "^3.12.1",
     "react-responsive-carousel": "^3.2.10",
