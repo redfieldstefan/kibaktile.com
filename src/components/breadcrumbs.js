@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Link from './Link';
+import Link from './link';
 
 const Trail = styled.ul`
 	padding: ${props => props.theme.padding.mobile} ${props => props.theme.padding.mobile} 0 0;
