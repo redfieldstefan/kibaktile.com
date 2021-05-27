@@ -1,3 +1,4 @@
+import React from 'react';
 import Helmet from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 import "../styles/globals.css";
