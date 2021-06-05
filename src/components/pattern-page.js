@@ -196,7 +196,7 @@ const PatternPage = ({pattern}) => {
             Want to order or have a question?&nbsp;
             <StyledFakeLink onClick={() => setShowModal(true)}>Get started</StyledFakeLink>
           </GetStarted>
-          <Modal isOpen={showModal} handleClose={() => setShowModal(false)} onRequestClose={() => setShowModal(false)}>
+          <Modal isOpen={showModal} onRequestClose={() => setShowModal(false)}>
             <Contact />
           </Modal>
         </Description>

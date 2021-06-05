@@ -34,9 +34,9 @@ const Button = styled.button`
   }
 `;
 
-const Modal = ({children, isOpen, handleClose, ...rest}) => (
-	<ReactModal {...rest} isOpen={isOpen} style={customStyles}>
-		<Button onClick={handleClose}>
+const Modal = ({children, isOpen, onRequestClose, ...rest}) => (
+	<ReactModal {...rest} isOpen={isOpen} style={customStyles} onRequestClose={onRequestClose} setAppElement="app">
+		<Button onClick={onRequestClose}>
 			<img src="/icons/close.png" />
 		</Button>
 		{children}

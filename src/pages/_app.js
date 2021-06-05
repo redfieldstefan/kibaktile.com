@@ -26,12 +26,12 @@ const baseTheme = {
 
 function MyApp({ Component, pageProps }) {
   return (
-  	<React.Fragment>
+  	<div id="app">
   		<Helmet link={[{href: "https://fonts.googleapis.com/css2?family=Work+Sans:wght@300&display=swap"}]} />
 	  	<ThemeProvider theme={baseTheme}>
 		  	<Component {...pageProps} />
 	  	</ThemeProvider>
-	  </React.Fragment>
+	  </div>
   );
 }
 

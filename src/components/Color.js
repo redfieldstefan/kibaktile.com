@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Modal from './modal';
 
 const StyledContainer = styled.div`
   text-align: center;

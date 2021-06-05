@@ -154,10 +154,7 @@ const colorFilters = () => {
 	}));
 
 	const sheens = ["matte", "gloss", "satin", "metallic"];
-
 	const filters = partition(possibleFilters, filter => sheens.includes(filter));
-
-	console.log("FILTERS", filters)
 
 	return {
 		sheens: filters[0],
@@ -165,7 +162,7 @@ const colorFilters = () => {
 	};
 }
 
-const Colors = () => {
+const Colors = ({initialColor}) => {
 	const [filters, setFilters] = useState([]);
 	const [filtersOpen, setFiltersOpen] = useState(false);
 	
@@ -228,11 +225,21 @@ const Colors = () => {
 						<StyledHeadline>Color Options</StyledHeadline>
 						<p>Beautiful design elevated with colors to fit your installation perfectly. Browse our options and <a href="/#contact">contact us</a> to request samples.</p>
 					</StyledHeadlineContainer>
-					<ColorBlock colors={filterColors()} />
+					<ColorBlock colors={filterColors()} initialColor={initialColor}/>
 				</StyledSwatches>
 			</StyledColors>
 		</BasePage>
 	);
 };
+
+Colors.getInitialProps = ({query}) => {
+	const initialColor = query.selected && colors.find(color => color.name.toLowerCase() === query.selected.toLowerCase());
+
+	console.log("initialColor", initialColor)
+
+	return {
+		initialColor
+	}
+}
 
 export default Colors;
