@@ -147,4 +147,16 @@ const colors = [
 	ZHgloss,
 ];
 
+export const featured = [
+	GR38matte,
+	GS31matte,
+	JWgloss,
+	LP26matte,
+	ZHgloss,
+	SG12matte,
+	Agloss,
+	BQ5matte,
+	EI18satin
+];
+
 export default colors;

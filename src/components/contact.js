@@ -60,7 +60,7 @@ const Submit = styled(Button)`
   }
 `;
 
-const Contact = () => {
+const Contact = ({className}) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
@@ -73,7 +73,7 @@ const Contact = () => {
   }
 
   return (
-    <Container id="contact">
+    <Container id="contact" className={className}>
       <h2 className="feature-page-section-header">Contact us</h2>
       <ContactForm action="https://formspree.io/info@kibaktile.com" method="POST">
         <ContactInput label="Name" name="name" value={name} onChange={(e) => handleChange(e, setName)} />

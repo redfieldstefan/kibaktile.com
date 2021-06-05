@@ -6,12 +6,11 @@ import Link from "./link";
 const Container = styled.div`
 	display: flex;
 	flex-direction: column;
-	border-top: 3px solid WhiteSmoke;
 	padding: 80px ${props => props.theme.padding.mobile};
 
   @media(min-width: ${props => props.theme.breakpoints.tablet}) {
     flex-direction: row;
-    padding: 60px ${props => props.theme.padding.default};
+    padding: 120px ${props => props.theme.padding.default};
   }
 `;
 

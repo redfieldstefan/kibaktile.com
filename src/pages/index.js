@@ -6,6 +6,7 @@ import Contact from "../components/contact";
 import Image from "../components/image";
 import Link from "../components/link";
 import PatternSlides from '../components/pattern-slides';
+import ColorsBar from '../components/colors-bar';
 import catalog, { pickRandomPattern } from '../utils/catalog';
 
 const MissionStatement = styled.section`
@@ -38,6 +39,7 @@ const Bar = styled.div`
 
   @media(min-width: ${props => props.theme.breakpoints.tablet}) {
     flex-direction: row;
+    margin-bottom: 40px;
   }
 `;
 
@@ -65,6 +67,12 @@ const StyledLink = styled(Link)`
   display: block;
   padding-top: 10px;
   font-weight: 400;
+`;
+
+const StyledContact = styled(Contact)`
+box-shadow: 0px -5px 5px -1px rgba(182,178,178,0.25) inset;
+-webkit-box-shadow: 0px -5px 5px -1px rgba(182,178,178,0.25) inset;
+-moz-box-shadow: 0px -5px 5px -1px rgba(182,178,178,0.25) inset;
 `;
 
 const CustomParagraph = styled(Paragraph)`
@@ -127,7 +135,8 @@ const Home = ({initialPattern}) => {
           Contact us via email at <a href="mailto:info@kibaktile.com">info@kibaktile.com</a>
         </p>
       </MissionStatement>
-      <Contact />
+      <StyledContact />
+      <PatternSlides patterns={catalog} />
       <Bar>
         <SakuraCustomParagraph>
           Sakura. Elegant and timeless, work with us to create the perfect layout for your space. <br/> 
@@ -137,7 +146,7 @@ const Home = ({initialPattern}) => {
         <SakuraImageContainer tablet src="/cherry-background-tablet.jpg" role="img" aria-label="sakura cherry sink backsplash" />
         <SakuraImageContainer mobile src="/cherry-background-mobile.jpg" role="img" aria-label="sakura cherry sink backsplash" />
       </Bar>
-      <PatternSlides patterns={catalog} />
+      <ColorsBar />
     </BasePage>
   );
 };
