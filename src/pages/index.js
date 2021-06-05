@@ -5,14 +5,15 @@ import HomeHero from "../components/home-hero";
 import Contact from "../components/contact";
 import Image from "../components/image";
 import Link from "../components/link";
-import { pickRandomPattern } from '../utils/catalog';
+import PatternSlides from '../components/pattern-slides';
+import catalog, { pickRandomPattern } from '../utils/catalog';
 
 const MissionStatement = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: 1em;
-  padding: 40px ${props => props.theme.padding.mobile};
+  padding: 40px ${props => props.theme.padding.mobile} 0px ${props => props.theme.padding.mobile};
   text-align: left;
 
   @media(min-width: ${props => props.theme.breakpoints.tablet}) {
@@ -90,14 +91,17 @@ const SakuraCustomParagraph = styled(CustomParagraph)`
 const SakuraImageContainer = styled(CustomImageContainer)`
   width: calc(100%);
   order: 1;
+  display: ${props => props.mobile ? 'block' : 'none'};
 
   @media(min-width: ${props => props.theme.breakpoints.tablet}) {
     width: calc(50%);
     order: unset;
+    display: ${props => props.tablet ? 'block' : 'none'};
   }
 
   @media(min-width: ${props => props.theme.breakpoints.laptop}) {
     width: calc(75%);
+    display: ${props => props.desktop ? 'block' : 'none'};
   }
 `
 
@@ -123,23 +127,17 @@ const Home = ({initialPattern}) => {
           Contact us via email at <a href="mailto:info@kibaktile.com">info@kibaktile.com</a>
         </p>
       </MissionStatement>
-      <Bar>
-        <CustomImageContainer src="/Perceval-8x8-floor.jpg" role="img" aria-label="custom designed floor" />
-        <CustomParagraph>
-          Designing a new home or looking for a custom design to integrate into your commercial project? We will 
-          work with you to draft an installation perfect to fit your plan. With custom design, colors, and configuration
-          you will be able to create a truly unique and elevated space.
-          <StyledLink href='/custom'>Get started with custom</StyledLink>
-        </CustomParagraph>
-      </Bar>
       <Contact />
       <Bar>
         <SakuraCustomParagraph>
           Sakura. Elegant and timeless, work with us to create the perfect layout for your space. <br/> 
           <StyledLink href='/catalog/sakura-cherry-tree'>Learn more about Sakura</StyledLink>
         </SakuraCustomParagraph>
-        <SakuraImageContainer src="/homepage-cherry-background.jpg" role="img" aria-label="sakura cherry sink backsplash" />
+        <SakuraImageContainer desktop src="/homepage-cherry-background.jpg" role="img" aria-label="sakura cherry sink backsplash" />
+        <SakuraImageContainer tablet src="/cherry-background-tablet.jpg" role="img" aria-label="sakura cherry sink backsplash" />
+        <SakuraImageContainer mobile src="/cherry-background-mobile.jpg" role="img" aria-label="sakura cherry sink backsplash" />
       </Bar>
+      <PatternSlides patterns={catalog} />
     </BasePage>
   );
 };
@@ -153,3 +151,13 @@ Home.getInitialProps = () => {
 };
 
 export default Home;
+
+      // <Bar>
+      //   <CustomImageContainer src="/Perceval-8x8-floor.jpg" role="img" aria-label="custom designed floor" />
+      //   <CustomParagraph>
+      //     Designing a new home or looking for a custom design to integrate into your commercial project? We will 
+      //     work with you to draft an installation perfect to fit your plan. With custom design, colors, and configuration
+      //     you will be able to create a truly unique and elevated space.
+      //     <StyledLink href='/custom'>Get started with custom</StyledLink>
+      //   </CustomParagraph>
+      // </Bar>
