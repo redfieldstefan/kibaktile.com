@@ -56,6 +56,7 @@ const PickRandomPattern = styled.button`
 const HomeHeroTile = styled.span`
 	width: 25%;
   flex-grow: 0;
+  display: inherit;
 
   @media(min-width: ${props => props.theme.breakpoints.tablet}) {
     width: calc(100%/6);
@@ -124,6 +125,11 @@ const RandomPatternLink = styled.a`
 	color: ${props => props.theme.colors.mint};
 `;
 
+const StyledImage = styled(Image)`
+  max-width: 100%;
+  max-height: 100%;
+`;
+
 const	generateTiles = (pattern) => {
   const tilesForReturn = [];
   
@@ -150,7 +156,7 @@ const HomeHero = ({initialPattern}) => {
 	          generateTiles(pattern).map((tile, i) => {
 	            return (
 	            	<HomeHeroTile key={`${pattern.rotationClass}-${i}`}>
-	                <Image priority src={tile || "/placeholder.jpg"} />
+	                <StyledImage priority height="1000" width="1000" src={tile || "/placeholder.jpg"} />
 	            	</HomeHeroTile>
 	            )
 	          })
