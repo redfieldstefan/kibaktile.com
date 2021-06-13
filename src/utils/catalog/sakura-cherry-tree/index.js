@@ -1,5 +1,5 @@
 const cherryBackground = "/catalog/sakura-cherry-tree/cherry-background.jpg";
-const cherryTreeTub = "/catalog/sakura-cherry-tree/cherryTreeTub2.jpg";
+const cherryTreeTub = "/catalog/sakura-cherry-tree/CherryTreeTub2.jpg";
 const cherryTreeRestaurant = "/catalog/sakura-cherry-tree/Ch-Tree-restaurant.jpg";
 const cherryTreeShower = "/catalog/sakura-cherry-tree/Ch-Tree-LW-shower.jpg";
 const cherryTreeBacksplash1 = "/catalog/sakura-cherry-tree/Ch-Tree-mural-backsplash-1.jpg";
