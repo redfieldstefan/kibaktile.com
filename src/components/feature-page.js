@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import catalog from '../utils/catalog';
 import Link from "./link";
 import BasePage from "./base-page";
-import { Carousel } from 'react-responsive-carousel';
+import Carousel from "./carousel";
 import Contact from "./contact";
 import NavigatePatterns from "./navigate-patterns";
 
@@ -144,7 +144,10 @@ const CarouselImageContainer = styled.span`
 
 const CarouselImage = styled.img`
   max-height: 500px;
-  width: auto!important;
+
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    width: auto!important;
+  }
 `;
 
 const Process = styled.div`
