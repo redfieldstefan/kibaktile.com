@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import catalog, { pickRandomPattern } from "../utils/catalog";
+import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components';
+import catalog, { pickRandomPattern } from "../utils/catalog";
 
 const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2018+Kibak+Tile+catalog.pdf";
 
@@ -149,7 +150,7 @@ const HomeHero = ({initialPattern}) => {
 	          generateTiles(pattern).map((tile, i) => {
 	            return (
 	            	<HomeHeroTile key={`${pattern.rotationClass}-${i}`}>
-	                <img src={tile || "/placeholder.jpg"} />
+	                <Image priority src={tile || "/placeholder.jpg"} />
 	            	</HomeHeroTile>
 	            )
 	          })
