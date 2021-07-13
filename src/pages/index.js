@@ -1,134 +1,172 @@
 import React from 'react';
+import styled from 'styled-components';
 import BasePage from '../components/base-page';
-import PatternBar from "../components/pattern-bar";
+import HomeHero from "../components/home-hero";
 import Contact from "../components/contact";
-import catalog from "../data/catalog";
-import { Link } from 'gatsby';
-import refresh from "../assets/images/icons/refresh.png";
-import placeholder from "../assets/images/placeholder.jpg";
+import Image from "../components/image";
+import Link from "../components/link";
+import PatternSlides from '../components/pattern-slides';
+import ColorsBar from '../components/colors-bar';
+import catalog, { pickRandomPattern } from '../utils/catalog';
 
-//PATTERNS
-import angelicSimple from "../data/catalog/angelic-simple";
-import hana from "../data/catalog/hana";
-import gammon from "../data/catalog/gammon";
-import wallflower from "../data/catalog/wallflower";
+const MissionStatement = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1em;
+  padding: 40px ${props => props.theme.padding.mobile} 0px ${props => props.theme.padding.mobile};
+  text-align: left;
 
-const pdfUrl = "https://s3-us-west-2.amazonaws.com/studio-redfield/2018+Kibak+Tile+catalog.pdf";
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    font-size: 1.15em;
+    padding: 60px ${props => props.theme.padding.default};
+    text-align: justify;
+  }
+`;
 
-export default class Index extends React.PureComponent {
+const Paragraph = styled.p`
+    line-height: 1.5;
+    font-weight: 300;
+    margin-bottom: 1.5em;
+    max-width: 600px;
+`;
 
-  constructor(props) {
-    super(props);
+const Bar = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: whiteSmoke;
 
-    this.state = {
-      pattern: {painted: ""}
-    }
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    flex-direction: row;
+    margin-bottom: 40px;
+  }
+`;
 
-    this.pickRandomPattern = this.pickRandomPattern.bind(this);
+const CustomImageContainer = styled.span`
+  width: calc(100%);
+  background: no-repeat url(${props => props.src});
+  background-size: cover;
+  height: 400px;
+
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    width: calc(50%);
   }
 
-  componentDidMount() {
-    const availablePatterns = catalog.filter(pattern => pattern.url !== "/catalog/sakura-cherry-tree/");
-    const pattern = availablePatterns[Math.floor(Math.random()*availablePatterns.length)];
+  @media(min-width: ${props => props.theme.breakpoints.laptop}) {
+    width: calc(100%/3);
+  }
+`
 
-    this.setState({
-      pattern
-    })
+const StyledImage = styled(Image)`
+  width: 100%;
+`;
+
+const StyledLink = styled(Link)`
+  text-decoration: underline;
+  display: block;
+  padding-top: 10px;
+  font-weight: 400;
+`;
+
+const StyledContact = styled(Contact)`
+box-shadow: 0px -5px 5px -1px rgba(182,178,178,0.25) inset;
+-webkit-box-shadow: 0px -5px 5px -1px rgba(182,178,178,0.25) inset;
+-moz-box-shadow: 0px -5px 5px -1px rgba(182,178,178,0.25) inset;
+`;
+
+const CustomParagraph = styled(Paragraph)`
+  padding: 30px 40px;
+  flex: 1;
+  align-self: center;
+  font-size: 1.2em;
+  margin-bottom: 0;
+
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    padding: 40px 60px;
+    font-size: 1.3em;
+  }
+`;
+
+const SakuraCustomParagraph = styled(CustomParagraph)`
+  order: 2;
+
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    order: unset;
+  }
+`;
+
+const SakuraImageContainer = styled(CustomImageContainer)`
+  width: calc(100%);
+  order: 1;
+  display: ${props => props.mobile ? 'block' : 'none'};
+
+  @media(min-width: ${props => props.theme.breakpoints.tablet}) {
+    width: calc(50%);
+    order: unset;
+    display: ${props => props.tablet ? 'block' : 'none'};
   }
 
-  pickRandomPattern(e) {
-    e.preventDefault();
-    const forThePicking = catalog.filter(pattern => pattern !== this.state.pattern && pattern.url !== "/catalog/sakura-cherry-tree/");
-    const randomPattern = forThePicking[Math.floor(Math.random()*forThePicking.length)];
-
-    this.setState({
-      pattern: randomPattern
-    });
+  @media(min-width: ${props => props.theme.breakpoints.laptop}) {
+    width: calc(75%);
+    display: ${props => props.desktop ? 'block' : 'none'};
   }
+`
 
-  generateTiles(pattern) {
-    const tilesForReturn = [];
-    for(var i = 0; i <= 11; i++) {
-      tilesForReturn.push(pattern.painted);
-    }
-    return tilesForReturn;
+const Home = ({initialPattern}) => {
+  return (
+    <BasePage>
+      <HomeHero initialPattern={initialPattern}/>
+      <MissionStatement>
+        <Paragraph>
+          Kibak Tile is the only company that has been designing and producing dry-line
+          hand-painted tile, specializing in custom coloring and designing, for customers
+          worldwide since 1981. We are an all female company; a lady gang of mothers, daughters,
+          sisters, and grandmothers. Over our 40+ years in the business, our clients have ranged
+          from satisfied homeowners to some of the most elite, architectural and design firms in
+          the USA and abroad.
+        </Paragraph>
+        <Paragraph>
+          Our vision is to bring handcrafted excellence, artistry and beauty  to the world of
+          ceramic tile one piece at a time. Tile is timeless - let’s make history together.
+        </Paragraph>
+
+        <p className="contact-us">
+          Contact us via email at <a href="mailto:info@kibaktile.com">info@kibaktile.com</a>
+        </p>
+      </MissionStatement>
+      <StyledContact />
+      <PatternSlides patterns={catalog} />
+      <Bar>
+        <SakuraCustomParagraph>
+          Sakura. Elegant and timeless, work with us to create the perfect layout for your space. <br/> 
+          <StyledLink href='/catalog/sakura-cherry-tree'>Learn more about Sakura</StyledLink>
+        </SakuraCustomParagraph>
+        <SakuraImageContainer desktop src="/homepage-cherry-background.jpg" role="img" aria-label="sakura cherry sink backsplash" />
+        <SakuraImageContainer tablet src="/cherry-background-tablet.jpg" role="img" aria-label="sakura cherry sink backsplash" />
+        <SakuraImageContainer mobile src="/cherry-background-mobile.jpg" role="img" aria-label="sakura cherry sink backsplash" />
+      </Bar>
+      <ColorsBar />
+    </BasePage>
+  );
+};
+
+Home.getInitialProps = () => {
+  const initialPattern = pickRandomPattern();
+
+  return {
+    initialPattern
   }
+};
 
-  renderHomeHero(pattern) {
-    return (
-      <div className="HomeHero">
-        <button className="pick-random-pattern" onClick={this.pickRandomPattern}>
-          <img src={refresh} />
-        </button>
-        <div className="HomeHero-background">
-          {
-            this.generateTiles(pattern).map((tile, i) => {
-              return (
-                <span key={i} className={`HomeHero-tile ${pattern.rotationClass}`}>
-                  <img src={tile || placeholder} />
-                </span>
-              )
-            })
-          }
-        </div>
-        <div className="HomeHero-text-container">
-          <div className="HomeHero-text">
-            <h1>Kibak Tile</h1>
-            <h2>Design, make, bake, repeat. Hand-painted ceramic tile made in Oregon since 1981.</h2>
-          </div>
-        </div>
-      </div>
-    )
-  }
+export default Home;
 
-  render() {
-    return (
-      <BasePage className="home">
-
-        {this.renderHomeHero(this.state.pattern)}
-        {
-          this.state.pattern &&          
-          <div className="pattern-cta">
-            <p>
-              You are looking at our <Link className="random-pattern-link" to={this.state.pattern.url}>
-                {this.state.pattern.name}
-              </Link> pattern. View more of our <Link to="/catalog/">Catalog</Link> online or
-              download the <a href={pdfUrl}>full PDF</a>
-            </p>
-          </div>
-        }
-
-        <section  className="text-main">
-          <section className="mission-statement">
-            <p>
-              Kibak Tile is the only company that has been designing and producing dry-line,
-              hand-painted tile, specializing in custom coloring and designing  for customers
-              worldwide since 1981. We are an all female company; a lady gang of mothers, daughters,
-              sisters, and grandmothers. Over our 40+ years in the business, our clients have ranged
-              from satisfied homeowners to some of the most elite, architectural and design firms in
-              the USA and abroad.
-            </p>
-            <p>
-              Our vision is to bring handcrafted excellence, artistry and beauty  to the world of
-              ceramic tile one piece at a time. Tile is timeless - let’s make history together.
-            </p>
-
-            <p className="contact-us">
-              Contact us via email at <a href="mailto:info@kibaktile.com">info@kibaktile.com</a>
-            </p>
-          </section>
-
-          <PatternBar pattern={hana} alignment="left" backgroundColor="dark-blue" />
-          <PatternBar pattern={wallflower} alignment="right" backgroundColor="black" />
-
-        </section>
-
-        <Contact />
-
-        <PatternBar pattern={gammon} alignment="right" backgroundColor="dark-brown" />
-        <PatternBar pattern={angelicSimple} alignment="left" backgroundColor="light-gray" />
-
-      </BasePage>
-    )
-  }
-}
+      // <Bar>
+      //   <CustomImageContainer src="/Perceval-8x8-floor.jpg" role="img" aria-label="custom designed floor" />
+      //   <CustomParagraph>
+      //     Designing a new home or looking for a custom design to integrate into your commercial project? We will 
+      //     work with you to draft an installation perfect to fit your plan. With custom design, colors, and configuration
+      //     you will be able to create a truly unique and elevated space.
+      //     <StyledLink href='/custom'>Get started with custom</StyledLink>
+      //   </CustomParagraph>
+      // </Bar>

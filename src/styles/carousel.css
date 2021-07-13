@@ -1,0 +1,15 @@
+.carousel .slide {
+  background: white !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel.carousel-slider .control-arrow {
+  background: black !important;
+}
+
+.thumbs-wrapper {
+	display: flex;
+	justify-content: center;
+}

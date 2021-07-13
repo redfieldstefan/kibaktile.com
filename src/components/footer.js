@@ -1,11 +1,27 @@
 import React from "react";
-import catalog from "../data/catalog";
+import styled from 'styled-components';
+
+const StyledContainer = styled.ul`
+	width: 100%;
+	background: black;
+	display: flex;
+	justifyContent: center;
+	color: white;
+	padding: 20px ${props => props.theme.padding.mobile};
+	
+	@media(min-width: ${props => props.theme.breakpoints.mobile}) {
+    padding: 1.5em;
+	}
+	
+	@media(min-width: ${props => props.theme.breakpoints.tablet}) {
+		padding: 20px 40px;
+	}
+`;
 
 const Footer = () => (
-  <ul className="Footer">
+  <StyledContainer>
     <li><a href="mailto:info@kibaktile.com">info@kibaktile.com</a></li>
-    <li><a href="https://goo.gl/maps/BcbCzHMETLw" target="blank">183 E.Hood St Sisters, Oregon</a></li>
-  </ul>
+  </StyledContainer>
 );
 
 export default Footer;

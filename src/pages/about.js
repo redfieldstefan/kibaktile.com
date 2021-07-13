@@ -1,9 +1,5 @@
-import React, {PureComponent} from 'react';
+import React from 'react';
 import BasePage from '../components/base-page';
-
-import carli from "../assets/images/carli.jpg";
-import maren from "../assets/images/maren.jpg";
-import susanne from "../assets/images/susanne.jpg";
 
 const About = () => (
   <BasePage title="About Us | Kibak Tile">

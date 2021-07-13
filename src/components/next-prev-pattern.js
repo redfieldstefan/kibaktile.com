@@ -1,25 +1,71 @@
 import React from "react";
-import { Link } from "gatsby";
-import nextArrow from "../assets/images/icons/next-arrow.png";
-import prevArrow from "../assets/images/icons/prev-arrow.png";
+import styled from 'styled-components'
+import Link from './link';
 
-const NextPrevPattern = ({pattern, direction}) => (
-  <Link className={`NextPrevPattern ${direction}`} to={pattern.url}>
-    <span className="NextPrevPattern-img">
-      <img src={pattern.painted || pattern.lineDrawing} />
-    </span>
-    <div className={`text-and-arrow ${direction}`}>
-    <span className="text-and-arrow-name">{pattern.name}</span>
-      {
-        (direction === "next") &&
-        <img className="NextPrevPattern-arrow" src={nextArrow}/>
-      }
-      {
-        (direction === "previous") &&
-        <img className="NextPrevPattern-arrow" src={prevArrow} />
-      }
-    </div>
-  </Link>
-);
+const nextArrow = "/icons/next-arrow.png";
+const prevArrow = "/icons/prev-arrow.png";
+
+const PatternLink = styled.span`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  float: ${props => props.previous ? 'left' : 'right'}
+
+  @media(min-width: $width-tablet) {
+    width: auto;
+  }
+`;
+
+const ImageContainer = styled.span`
+  height: 50px;
+`;
+
+const Image = styled.img`
+  height: 100%;
+  background-color: white;
+  float: ${props => props.previous ? 'right' : 'left'}
+`;
+
+const ArrowContainer = styled.div`
+  display: flex;
+  flex-direction: ${props => props.previous ? 'row-reverse' : 'row'};
+  align-items: center;
+`;
+
+const Name = styled.p`
+  padding: 10px 0;
+`;
+
+const Arrow = styled.img`
+  height: 10px;
+  flex-direction: row-reverse;
+  padding:  ${props => props.previous ? '0 10px 0 0' : '0 0 0 10px'};
+`;
+
+const NextPrevPattern = ({pattern, direction}) => {
+  const previous = direction === "previous"
+
+  return (
+    <Link href={pattern.url}>
+      <PatternLink previous={previous}>
+        <ImageContainer>
+          <Image previous={previous} src={pattern.painted || pattern.lineDrawing} />
+        </ImageContainer>
+        <ArrowContainer previous={previous}>
+          <Name>{pattern.name}</Name>
+          {
+            (direction === "next") &&
+            <Arrow src={nextArrow}/>
+          }
+          {
+            (direction === "previous") &&
+            <Arrow previous src={prevArrow} />
+          }
+        </ArrowContainer>
+      </PatternLink>
+    </Link>
+  )
+};
 
 export default NextPrevPattern;

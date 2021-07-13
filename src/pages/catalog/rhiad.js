@@ -1,5 +1,5 @@
 import React from "react";
-import Rhiad from "../../data/catalog/rhiad";
+import Rhiad from "../../utils/catalog/rhiad";
 import PatternPage from "../../components/pattern-page";
 
 const RhiadPage = () => (

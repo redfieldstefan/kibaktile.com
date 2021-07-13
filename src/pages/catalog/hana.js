@@ -1,5 +1,5 @@
 import React from "react";
-import Hana from "../../data/catalog/hana";
+import Hana from "../../utils/catalog/hana";
 import PatternPage from "../../components/pattern-page";
 
 const HanaPage = () => (
